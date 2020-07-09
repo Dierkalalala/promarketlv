@@ -193,6 +193,7 @@
 
   .commodity .swiper-wrapper {
     flex-wrap: wrap;
+    justify-content: space-between;
   }
 
   .commodity-card-parameter {
