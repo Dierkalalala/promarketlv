@@ -181,7 +181,7 @@
   }
 
   .commodity-image-wrapper {
-    height: 140px;
+    height: 180px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -189,6 +189,7 @@
 
   .commodity-image-wrapper img {
     height: 90%;
+    object-fit: contain;
   }
 
   .commodity .swiper-wrapper {

@@ -4,6 +4,7 @@ if (screen.width > 991) {
     spaceBetween: 24,
     pagination: {
       el: '.swiper-pagination',
+      clickable: true,
     },
     slidesPerView: 'auto',
 
