@@ -384,6 +384,11 @@
     z-index: 9;
     width: 90%;
   }
+  .header-burger{
+    height: 40px;
+    display: flex;
+    align-items: center;
+  }
   .header_form_search input[type='text']{
     transition: none;
   }

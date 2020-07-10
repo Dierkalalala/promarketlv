@@ -1469,6 +1469,7 @@ main {
   line-height: 32px;
   color: #202020;
   display: flex;
+  margin-bottom: 10px;
 }
 .shop__drop__down-content-side-header .chevron{
   margin-right: 8px;

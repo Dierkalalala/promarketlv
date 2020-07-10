@@ -75,46 +75,51 @@ function DropDown(parent, trigger, changers) {
 }
 
 function Burger(burger, menu, parentElement = {}) {
-  this.burger = document.querySelector(burger)
-  this.menu = document.querySelector(menu)
-  let self = this
-  this.attribute = `data-burger${Math.random()}`;
-  this.burger.setAttribute('data-burger', this.attribute)
-  this.menu.setAttribute('data-burger', this.attribute)
-  Array.from(this.burger.querySelectorAll('*')).forEach(el => {
-    el.setAttribute('data-burger', this.attribute)
-  })
-  Array.from(this.menu.querySelectorAll('*')).forEach(el => {
-    el.setAttribute('data-burger', this.attribute)
-  })
+  try {
+    this.burger = document.querySelector(burger)
+    this.menu = document.querySelector(menu)
 
-  this.burger.addEventListener('click', activateBurger);
+    let self = this
+    this.attribute = `data-burger${Math.random()}`;
+    this.burger.setAttribute('data-burger', this.attribute)
+    this.menu.setAttribute('data-burger', this.attribute)
+    Array.from(this.burger.querySelectorAll('*')).forEach(el => {
+      el.setAttribute('data-burger', this.attribute)
+    })
+    Array.from(this.menu.querySelectorAll('*')).forEach(el => {
+      el.setAttribute('data-burger', this.attribute)
+    })
 
-  function activateBurger(e) {
-    document.body.classList.add('overflow-js')
-    self.menu.classList.toggle('active')
-    this.classList.toggle('open')
-    window.addEventListener('scroll', noScroll)
-  }
+    this.burger.addEventListener('click', activateBurger);
 
-  document.addEventListener('click', closeBurger)
-
-  function closeBurger(e) {
-    if (
-      e.target.getAttribute('data-burger') === self.attribute ||
-      e.target.getAttribute('data-burger') === parentElement.attribute
-    ) {
-      parentElement.burger.classList.add('open')
-      parentElement.menu.classList.add('active')
-    } else {
-      self.burger.classList.remove('open');
-      self.menu.classList.remove('active');
-      document.body.classList.remove('overflow-js');
+    function activateBurger(e) {
+      document.body.classList.add('overflow-js')
+      self.menu.classList.toggle('active')
+      this.classList.toggle('open')
+      window.addEventListener('scroll', noScroll)
     }
-  }
 
-  function noScroll(e) {
-    // console.log(e)
+    document.addEventListener('click', closeBurger)
+
+    function closeBurger(e) {
+      if (
+        e.target.getAttribute('data-burger') === self.attribute ||
+        e.target.getAttribute('data-burger') === parentElement.attribute
+      ) {
+        parentElement.burger.classList.add('open')
+        parentElement.menu.classList.add('active')
+      } else {
+        self.burger.classList.remove('open');
+        self.menu.classList.remove('active');
+        document.body.classList.remove('overflow-js');
+      }
+    }
+
+    function noScroll(e) {
+      // console.log(e)
+    }
+  } catch (e) {
+    console.log(e)
   }
 }
 
@@ -129,7 +134,6 @@ let headerLangDropDown = new DropDown(
 let menuBurger = new Burger(
   '.header-burger',
   '.header_navigation',
-
 )
 let headerCartDrop = new Burger(
   '.header_cart',
@@ -156,10 +160,10 @@ function makeCommodityActive(commodityWrapper) {
   } catch (e) {
     console.log(e)
   }
-  try{
-  Array.from(this.commodity).forEach(el => {
-    el.addEventListener('click', toggleActiveClass)
-  })
+  try {
+    Array.from(this.commodity).forEach(el => {
+      el.addEventListener('click', toggleActiveClass)
+    })
   } catch (e) {
     console.log(e)
   }
@@ -186,6 +190,7 @@ function makeCommodityActive(commodityWrapper) {
 new makeCommodityActive(brandProductActiveCommodityWrapper);
 
 function Tabs(tabTrigger, tabContentWrapper, parentElement, closeButtonSelectorName) {
+  try{
   this.tab = tabTrigger
   this.tabContent = tabContentWrapper
   this.parent = parentElement
@@ -194,7 +199,7 @@ function Tabs(tabTrigger, tabContentWrapper, parentElement, closeButtonSelectorN
     this.closeButtons.push(child.querySelector(closeButtonSelectorName))
   })
   let self = this
-  if(!this.tab ||
+  if (!this.tab ||
     !this.tabContent ||
     !this.parent
   ) {
@@ -228,6 +233,10 @@ function Tabs(tabTrigger, tabContentWrapper, parentElement, closeButtonSelectorN
     this.classList.add('active')
     self.tabContent.classList.add('active')
   }
+
   this.closeAllTabs = closeTabs;
+  } catch (e) {
+    console.log(e)
+  }
 }
 
