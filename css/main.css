@@ -1489,8 +1489,31 @@ main {
   display: block;
   animation: fadeIn 0.3s linear;
 }
-
-
+.checkbox-label input{
+  display: none;
+}
+.checkbox-label span{
+  padding-left: 30px;
+}
+.checkbox-label{
+  position: relative;
+}
+.login-content .checkbox-label span:before {
+  content: '';
+  -webkit-appearance: none;
+  background-image: url(../img/common/checkbox.svg);
+  width: 18px;
+  height: 18px;
+  opacity: 0.54;
+  min-width: 18px;
+  position: absolute;
+  top: 4px;
+  left: 0;
+  outline: none;
+}
+.checkbox-label input:checked ~ span:before {
+  background-image: url(../img/common/checkbox-checked.svg);
+}
 
 @keyframes fadeIn {
   from{
