@@ -19,7 +19,7 @@ if (screen.width < 991) {
   headerNavigationWrapper.prepend(newLi);
   let menuBurger = new Burger(
     '.search_form_submit',
-    '.header_form_search .form_control'
+    '.header_form_search'
   )
   let commodityCardPrice = document.querySelectorAll('.commodity-card-price');
   Array.from(commodityCardPrice).forEach(card => {
@@ -91,7 +91,7 @@ function Burger(burger, menu, parentElement = {}) {
   this.burger.addEventListener('click', activateBurger);
 
   function activateBurger(e) {
-    document.body.classList.toggle('overflow-js')
+    document.body.classList.add('overflow-js')
     self.menu.classList.toggle('active')
     this.classList.toggle('open')
     window.addEventListener('scroll', noScroll)
