@@ -267,11 +267,94 @@
   .fixing-type-for-device-row {
     padding-left: 0;
   }
+  .shop__dropdown__wrapper {
+    width: 304px;
+    position: static;
+    height: auto;
+    display: flex;
+    margin-left: -15px;
+  }
+  .shop__drop__down-tabs-side{
+    height: auto;
+    width: 100%;
+    padding: 10px;
+  }
+  .shop__drop__down-content-side{
+    display: none;
+  }
+  .dropping__element__wrapper{
+    display: none;
+    box-shadow: none;
+  }
+  .dropping__element__wrapper.active{
+    display: block;
+  }
+  .shop__drop__down-tabs-side-container li a{
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 24px;
+    color: #202020;
+  }
+  .shop__drop__down-tabs-side-container li a{
+    padding-right: 20px;
+  }
+  .shop__drop__down-tabs-side-container li{
+    border: none;
+  }
+  .shop__drop__down-tabs-side-container li a svg{
+    display: none;
+  }
+  .header_navigation_wrapper li a{
+    display: flex;
+    align-items: center;
+    height: 57px;
+  }
+  .shop__drop__down-tabs-side-container li a{
+    padding-right:50px;
+  }
+  .shop__drop__down-tabs-side-container li.active{
+    background-color: transparent;
+  }
+  .shop__drop__down-content-side {
+    display: block;
+    left: -15px;
+    top: -70px;
+    z-index: 9;
+    transition: 0.3s linear all;
+    position: absolute;
+    transform: translateX(-100%);
+  }
+  .shop__drop__down-content-side.active{
+    display: block;
+    transform: translateX(0);
+    position: absolute;
+    width: 304px;
+    background-color: #fff;
+  }
+  .shop__drop__down-content-side-header{
+    padding-right: 50px;
+    line-height: 24px;
+  }
+  .shop__drop__down-content-side > .active{
+
+  }
+  .shop__drop__down-content-side.active ul {
+    overflow-y: auto;
+    background: #fff;
+    will-change: transform;
+    -webkit-overflow-scrolling: touch;
+  }
+  .shop__drop__down-content-side{
+    padding: 20px 20px 0 10px;
+  }
 
 
 }
 
 @media (max-width: 767px) {
+  .checkbox-label input{
+    -webkit-appearance: none;
+  }
   .main-banner .main-title {
     padding-top: 38px;
   }

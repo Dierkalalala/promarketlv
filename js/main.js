@@ -26,6 +26,10 @@ if (screen.width < 991) {
     let parent = card.closest('.commodity-default-card');
     parent.querySelector('.commodity-card-parameter').prepend(card);
   })
+  let shopDropDownLis = document.querySelectorAll('shop__drop__down-tabs-side-container ul > li')
+  Array.from(shopDropDownLis).forEach(el => {
+    el.classList.remove('active');
+  })
 }
 
 function DropDown(parent, trigger, changers) {
@@ -70,38 +74,42 @@ function DropDown(parent, trigger, changers) {
   }
 }
 
-function Burger(burger, menu) {
+function Burger(burger, menu, parentElement = {}) {
   this.burger = document.querySelector(burger)
   this.menu = document.querySelector(menu)
   let self = this
-  let attribute = `data-burger${Math.random()}`;
-  this.burger.setAttribute('data-burger', attribute)
-  this.menu.setAttribute('data-burger', attribute)
+  this.attribute = `data-burger${Math.random()}`;
+  this.burger.setAttribute('data-burger', this.attribute)
+  this.menu.setAttribute('data-burger', this.attribute)
   Array.from(this.burger.querySelectorAll('*')).forEach(el => {
-    el.setAttribute('data-burger', attribute)
+    el.setAttribute('data-burger', this.attribute)
   })
   Array.from(this.menu.querySelectorAll('*')).forEach(el => {
-    el.setAttribute('data-burger', attribute)
+    el.setAttribute('data-burger', this.attribute)
   })
 
   this.burger.addEventListener('click', activateBurger);
 
   function activateBurger(e) {
-    document.body.classList.add('overflow-js')
-    self.menu.classList.add('active')
-    this.classList.add('open')
+    document.body.classList.toggle('overflow-js')
+    self.menu.classList.toggle('active')
+    this.classList.toggle('open')
     window.addEventListener('scroll', noScroll)
   }
 
   document.addEventListener('click', closeBurger)
 
   function closeBurger(e) {
-    if (e.target.getAttribute('data-burger') == attribute) {
-
+    if (
+      e.target.getAttribute('data-burger') === self.attribute ||
+      e.target.getAttribute('data-burger') === parentElement.attribute
+    ) {
+      parentElement.burger.classList.add('open')
+      parentElement.menu.classList.add('active')
     } else {
-      self.burger.classList.remove('open')
-      self.menu.classList.remove('active')
-      document.body.classList.remove('overflow-js')
+      self.burger.classList.remove('open');
+      self.menu.classList.remove('active');
+      document.body.classList.remove('overflow-js');
     }
   }
 
@@ -120,14 +128,24 @@ let headerLangDropDown = new DropDown(
 )
 let menuBurger = new Burger(
   '.header-burger',
-  '.header_navigation'
+  '.header_navigation',
+
 )
 let headerCartDrop = new Burger(
   '.header_cart',
   '.header__cart__inner'
 )
-
-
+let headerShopDrop = new Burger(
+  '.header__shop__link > a',
+  '.shop__dropdown__wrapper',
+  menuBurger
+)
+let headerShopTabs = new Tabs(
+  document.querySelectorAll('.shop__drop__down-tabs-side-container li'),
+  document.querySelector('.shop__drop__down-content-side'),
+  document.querySelector('.shop__dropdown__wrapper'),
+  '.shop__drop__down-content-side-header'
+)
 let brandProductActiveCommodityWrapper = document
   .querySelector('.fixing-type-for-device-row');
 
@@ -167,4 +185,49 @@ function makeCommodityActive(commodityWrapper) {
 
 new makeCommodityActive(brandProductActiveCommodityWrapper);
 
+function Tabs(tabTrigger, tabContentWrapper, parentElement, closeButtonSelectorName) {
+  this.tab = tabTrigger
+  this.tabContent = tabContentWrapper
+  this.parent = parentElement
+  this.closeButtons = [];
+  Array.from(this.tabContent.children).forEach(child => {
+    this.closeButtons.push(child.querySelector(closeButtonSelectorName))
+  })
+  let self = this
+  if(!this.tab ||
+    !this.tabContent ||
+    !this.parent
+  ) {
+    return false
+  }
+  Array.from(this.tab).forEach(tab => {
+    tab.addEventListener('click', changeTheTab)
+  })
+
+  this.closeButtons.forEach(el => {
+    el.addEventListener('click', closeTabs);
+  })
+
+
+  function closeTabs() {
+    Array.from(self.tabContent.children).forEach(tab => {
+      tab.classList.remove('active')
+    })
+    Array.from(self.tab).forEach(tab => {
+      tab.classList.remove('active')
+    })
+    self.tabContent.classList.remove('active')
+
+  }
+
+  function changeTheTab(e) {
+    e.preventDefault()
+    let index = Array.from(this.parentNode.children).indexOf(this)
+    closeTabs()
+    self.tabContent.children[index].classList.add('active')
+    this.classList.add('active')
+    self.tabContent.classList.add('active')
+  }
+  this.closeAllTabs = closeTabs;
+}
 
