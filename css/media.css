@@ -347,6 +347,17 @@
   .shop__drop__down-content-side{
     padding: 20px 20px 0 10px;
   }
+  .header__shop__link:after{
+    content: '';
+    position: absolute;
+    top: 26px;
+    transform: translateY(-50%);
+    background-image: url(../img/common/chevron-down.svg);
+    width: 24px;
+    height: 24px;
+    display: block;
+    right: 20px;
+  }
 
 
 }
