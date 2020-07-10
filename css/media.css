@@ -374,11 +374,27 @@
   .shop__dropdown__wrapper:after{
     display: none;
   }
+  .fixing-inquiry-button{
+    margin: 20px auto 26px;
+  }
 
 
 }
 
 @media (max-width: 767px) {
+  .fixing-main-page-banner .fixing-banner-background{
+    display: none;
+  }
+  .bread-crumbs .bread-crumb-link-prev{
+    padding-left: 24px;
+  }
+  .fixing-main-banner .bread-crumbs{
+    margin-bottom: 30px;
+  }
+  .fixing-main-page-banner{
+    height: auto;
+    min-height: auto;
+  }
   .header_form_search.active{
     position: absolute;
     z-index: 9;

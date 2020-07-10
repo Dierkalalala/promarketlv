@@ -351,9 +351,8 @@ body {
   border: none;
   background-color: transparent;
   left: 5px;
-  pointer-events: none;
   pointer-events: all;
-  z-index: 9999999999;
+  z-index: 2;
   cursor: pointer;
   outline: none;
 }
