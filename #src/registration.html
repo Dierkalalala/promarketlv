@@ -1,0 +1,49 @@
+@@include('template-parts/_header.html')
+<main class="main">
+  <div class="auth-container">
+    <section class="login">
+      <div class="container">
+        <div class="bread-crumbs">
+          <ul class="d-flex">
+            <li class="bread-crumb-link">
+              <a href="#">
+                Магазин
+              </a>
+            </li>
+            <li class="bread-crumb-link">
+              Регистрация
+            </li>
+          </ul>
+        </div>
+        <div class="login-content">
+          <h1 class="main-title">
+            Регистрация
+          </h1>
+          <form action="#">
+            <label>
+              <input class="auth_control" placeholder="Электронная почта" type="email">
+            </label>
+            <label>
+              <input class="auth_control" placeholder="Пароль" type="password">
+            </label>
+            <label>
+              <input class="auth_control" placeholder="Пароль ещё раз" type="password">
+            </label>
+            <label class="checkbox-label">
+              <input type="checkbox" name="agreement">
+              <span>
+                Я согласен на обработку моих данных компанией Promarket
+              </span>
+            </label>
+            <button type="submit" class="submit-form default-button">
+              зарегистрироваться
+            </button>
+
+          </form>
+        </div>
+      </div>
+    </section>
+  </div>
+</main>
+@@include('template-parts/_footer.html')
+
