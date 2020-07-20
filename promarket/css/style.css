@@ -2201,28 +2201,24 @@ body {
 
 .header_form_search input::-moz-placeholder {
   font-size: 14px;
-  line-height: 17px;
   text-transform: uppercase;
   color: #E2E2E2;
 }
 
 .header_form_search input:-ms-input-placeholder {
   font-size: 14px;
-  line-height: 17px;
   text-transform: uppercase;
   color: #E2E2E2;
 }
 
 .header_form_search input::-ms-input-placeholder {
   font-size: 14px;
-  line-height: 17px;
   text-transform: uppercase;
   color: #E2E2E2;
 }
 
 .header_form_search input::placeholder {
   font-size: 14px;
-  line-height: 17px;
   text-transform: uppercase;
   color: #E2E2E2;
 }
@@ -2282,7 +2278,6 @@ body {
   text-transform: uppercase;
   border-radius: 50%;
   background: #CC2830;
-  border: 1px solid #FFFFFF;
   color: #FFFFFF;
   width: 18px;
   height: 18px;
@@ -2349,7 +2344,8 @@ body {
 
 .language-dropdown:after,
 .dropping__element__wrapper:after,
-.shop__dropping-element:after {
+.shop__dropping-element:after,
+.quantity-drop-down-wrapper:after {
   content: '';
   display: inline-block;
   border-left: 10px solid transparent;
@@ -2359,6 +2355,11 @@ body {
   position: absolute;
   top: -10px;
   left: 31px;
+}
+
+.quantity-drop-down-wrapper:after {
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 .header__cart_img {
@@ -3720,6 +3721,180 @@ main {
 
 .request-item .fixing-brand-card-row {
   margin-bottom: 0;
+}
+
+.top-card h1.main-title {
+  text-align: left;
+}
+
+.repair-list {
+  margin: 20px 0 20px 20px;
+}
+
+.repair-list li {
+  list-style: disc;
+  line-height: 24px;
+}
+
+.color-to-choose {
+  width: 32px;
+  height: 32px;
+  border-radius: 6px;
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.4);
+  margin-bottom: 23px;
+}
+
+.banner-categories-block-phone11 .fixing-category-card:hover,
+.commodity-default-card-short:hover {
+  background: #FAFAFA;
+  cursor: pointer;
+  transition: .3s all linear;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.4) !important;
+}
+
+.commodity-card-old-price {
+  text-decoration: line-through;
+  color: rgba(32, 32, 32, 0.24);
+}
+
+.reservation-form {
+  background: #ECECEC;
+  border-radius: 6px;
+  padding: 58px 102px 78px 102px;
+}
+
+#reservation-form-tel,
+#reservation-form-comments,
+input[type="date"],
+input[type="time"] {
+  width: 100%;
+  background: #FAFAFA;
+  border: 2px solid #E2E2E2;
+  box-sizing: border-box;
+  border-radius: 6px;
+  padding: 16px 24px;
+  resize: none;
+}
+
+.reservation-form .col-lg-6 label {
+  display: inline-block;
+}
+
+.reservation-form .col-lg-6 input[type="radio"] {
+  float: left;
+}
+
+.bread-crumbs {
+  opacity: 0.54;
+}
+
+.img-for-tablet,
+.title-for-tablet,
+.description-for-tablet,
+.title-for-mobile {
+  display: none;
+}
+
+.description-for-tablet {
+  font-size: 13px;
+  line-height: 24px;
+  color: #202020;
+  opacity: 0.54;
+}
+
+.commodity-default-card-short {
+  min-height: 176px;
+}
+
+.commodity-default-card-short span {
+  color: rgba(32, 32, 32, 0.54);
+}
+
+.default-order-radio-wrapper {
+  display: flex;
+}
+
+.commodity-default-card-short .commodity-card-title {
+  height: 100px;
+  line-height: 24px;
+}
+
+.commodity-default-card-short .commodity-card-title .commodity-card-parameter {
+  margin-bottom: 20px;
+}
+
+.fixing-category-card-img {
+  min-height: 78px;
+}
+
+.commodity-image-wrapper {
+  border-radius: 6px;
+}
+
+.commodity-default-card {
+  border-radius: 6px;
+}
+
+.quantity-input {
+  width: 48px;
+  height: 25px;
+  border: 2px solid #757575;
+  outline: none;
+  font-size: 14px;
+  line-height: 24px;
+  color: #202020;
+  text-align: center;
+}
+
+.commodity-card-additional-price {
+  font-size: 14px;
+  line-height: 24px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  color: #202020;
+  opacity: 0.54;
+  margin-bottom: 10px;
+}
+
+.quantity-view-wrapper label {
+  margin-right: 5px;
+}
+
+.quantity-drop {
+  position: relative;
+}
+
+.quantity-drop-down-wrapper {
+  position: absolute;
+  background: #FFFFFF;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
+  border-radius: 6px;
+  width: 56px;
+  top: 40px;
+  text-align: center;
+  display: none;
+  z-index: 2;
+}
+
+.quantity-drop-down-wrapper li {
+  height: 39px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 1px solid #E2E2E2;
+  cursor: pointer;
+}
+
+.quantity-drop-down-wrapper.active {
+  display: block;
+  -webkit-animation: fadeIn 0.5s linear;
+  animation: fadeIn 0.5s linear;
+}
+
+.commodity .swiper-container {
+  overflow-x: hidden;
+  overflow-y: visible;
 }
 
 @media only screen and (min-width: 35em) {
@@ -7053,6 +7228,10 @@ main {
     padding-left: 35px;
     width: 170px;
   }
+
+  .commodity-default-card-short {
+    min-height: 182px;
+  }
 }
 
 @media (max-width: 991px) {
@@ -7507,6 +7686,63 @@ main {
   .fixing-inquiry-button {
     margin: 20px auto 26px;
   }
+
+  .img-for-tablet,
+  .description-for-tablet {
+    display: block;
+  }
+
+  .img-for-pc,
+  .description-for-pc,
+  .top-card-hide,
+  #reservation-form-comments,
+  .commodity-hide {
+    display: none;
+  }
+
+  .title-for-tablet {
+    display: block;
+    padding-bottom: 10px;
+  }
+
+  .title-for-pc {
+    display: none;
+  }
+
+  .repair-list {
+    margin: 5px 0 10px 20px;
+  }
+
+  .repair-list li {
+    list-style: disc;
+    line-height: 22px;
+    font-size: 12px;
+  }
+
+  .commodity-card-title {
+    font-size: 11px;
+  }
+
+  .commodity-default-card-short {
+    min-height: 157px;
+  }
+
+  .commodity .swiper-slide {
+    padding: 0 8px;
+  }
+
+  .reservation-form {
+    padding: 42px 66px 62px 66px;
+    margin-bottom: 80px;
+  }
+
+  .commodity-default-card-short .commodity-card-title {
+    height: auto;
+  }
+
+  .service-inner-commodity {
+    display: none;
+  }
 }
 
 @media (max-width: 767px) {
@@ -7836,6 +8072,39 @@ main {
 
   .header_form_search.active .close_form_search {
     display: block;
+  }
+
+  .title-for-mobile {
+    display: block;
+  }
+
+  .title-for-tablet,
+  .color-hide {
+    display: none;
+  }
+
+  .img-for-tablet {
+    margin-bottom: 23px;
+  }
+
+  .to-wide {
+    width: 100% !important;
+  }
+
+  .reservation-form {
+    padding: 42px 15px 78px 15px;
+  }
+
+  .commodity-default-card-short {
+    margin-bottom: 16px;
+  }
+
+  .commodity-default-card-short .commodity-card-parameter {
+    margin-bottom: 20px;
+  }
+
+  .commodity-default-card-short .commodity-card-title {
+    margin-bottom: 19px;
   }
 }
 

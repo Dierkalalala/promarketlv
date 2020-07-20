@@ -17,6 +17,12 @@ if (screen.width > 991) {
         },
         slidesPerView: 4,
     })
+    comSwiperSecond.on('slideChange', function () {
+        cardDrop.closeDrop();
+    });
+    comSwiperFirst.on('slideChange', function () {
+        cardDrop.closeDrop();
+    });
 }
 if (screen.width < 991) {
     let dropDown = document.querySelector('.language-selection-drop-down');
@@ -161,11 +167,6 @@ let headerCartDrop = new Burger(
     '.header_cart',
     '.header__cart__inner'
 )
-/*let headerShopDrop = new Burger(
-    '.header__shop__link > a',
-    '.shop__dropdown__wrapper',
-    menuBurger
-)*/
 
 
 let headerShopTabs = new Tabs(
@@ -298,3 +299,67 @@ function Collapser(collapsTriggerClassName, collapsingClass, parentClassName) {
 }
 
 new Collapser('header__collapse', 'shop-dropdown-wrapper', '.header__shop__link');
+
+
+function CardDropDown(className) {
+    this.trigger = document.getElementsByClassName(className);
+
+    this.parentClassList = 'quantity-drop';
+
+    this.dropDownWrapper = document
+        .getElementsByClassName('quantity-drop-down-wrapper')[0];
+
+    let self = this;
+
+    Array.from(this.trigger).forEach(trig => {
+        trig.addEventListener('click', openCard)
+        
+    })
+
+    function fillTheMenu() {
+
+    }
+
+    function changeInputValue(){
+        console.log(this.innerText)
+    }
+
+    function openCard() {
+        let parent = this.closest('.quantity-view-wrapper');
+        let input = parent.querySelector('.quantity-input');
+        let leftAxis = input.getBoundingClientRect().left;
+        let topAxis = input.getBoundingClientRect().top + pageYOffset
+            + input.getBoundingClientRect().height + 30;
+        self.dropDownWrapper.style.cssText = `
+        left: ${leftAxis}px;
+        top: ${topAxis}px;
+    `;
+        self.dropDownWrapper.classList.add('active')
+        let lis = self.dropDownWrapper.querySelectorAll('li');
+        Array.from(lis).forEach(li => {
+            li.addEventListener('click', changeInputValue)
+        })
+    }
+    function closeDrop(e) {
+        let path = e.composedPath();
+        let isClosing = true;
+        Array.from(path).forEach(el => {
+            try {
+                if (el.classList.contains(self.parentClassList)) {
+                    isClosing = false
+                }
+            } catch (e) {
+                console.log(e)
+            }
+        })
+        if (isClosing) {
+            self.dropDownWrapper.classList.remove('active')
+        }
+    }
+    document.addEventListener('click', closeDrop)
+    this.closeDrop = function () {
+        self.dropDownWrapper.classList.remove('active')
+    }
+}
+
+let cardDrop = new CardDropDown('quantity-trigger-wrapper');

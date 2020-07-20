@@ -1,10 +1,1 @@
-<svg width="24" height="23" viewBox="0 0 24 23" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <g opacity="0.54" clip-path="url(#clip0)">
-    <path d="M10 15.85L15 11.1883L10 6.52656L10 15.85Z" fill="#202020"/>
-  </g>
-  <defs>
-    <clipPath id="clip0">
-      <rect width="22.3763" height="24" fill="white" transform="translate(0 22.3765) rotate(-90)"/>
-    </clipPath>
-  </defs>
-</svg>
+<svg width="24" height="23" fill="none" xmlns="http://www.w3.org/2000/svg"><g opacity=".54" clip-path="url(#clip0)"><path d="M10 15.85l5-4.662-5-4.661v9.323z" fill="#202020"/></g><defs><clipPath id="clip0"><path fill="#fff" transform="rotate(-90 11.188 11.188)" d="M0 0h22.376v24H0z"/></clipPath></defs></svg>

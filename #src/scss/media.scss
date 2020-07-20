@@ -15,6 +15,9 @@
     padding-left: 35px;
     width: 170px;
   }
+  .commodity-default-card-short {
+    min-height: 182px;
+  }
 }
 
 @media (max-width: 991px) {
@@ -430,6 +433,46 @@
   .fixing-inquiry-button{
     margin: 20px auto 26px;
   }
+  .img-for-tablet, .description-for-tablet{
+    display: block;
+  }
+  .img-for-pc, .description-for-pc, .top-card-hide, #reservation-form-comments, .commodity-hide {
+    display: none;
+  }
+  .title-for-tablet{
+    display: block;
+    padding-bottom: 10px;
+  }
+  .title-for-pc{
+    display: none;
+  }
+  .repair-list {
+    margin: 5px 0 10px 20px;
+  }
+  .repair-list li {
+    list-style: disc;
+    line-height: 22px;
+    font-size: 12px;
+  }
+  .commodity-card-title {
+    font-size: 11px;
+  }
+  .commodity-default-card-short {
+    min-height: 157px;
+  }
+  .commodity .swiper-slide {
+    padding: 0 8px;
+  }
+  .reservation-form{
+    padding: 42px 66px 62px 66px;
+    margin-bottom: 80px;
+  }
+  .commodity-default-card-short .commodity-card-title{
+    height: auto;
+  }
+  .service-inner-commodity{
+    display: none;
+  }
 
 
 }
@@ -735,6 +778,30 @@
   .header_form_search.active .close_form_search{
     display: block;
   }
+  .title-for-mobile{
+    display: block;
+  }
+  .title-for-tablet, .color-hide{
+    display: none;
+  }
+  .img-for-tablet{
+    margin-bottom: 23px;
+  }
+  .to-wide{
+    width: 100% !important;
+  }
+  .reservation-form {
+    padding: 42px 15px 78px 15px;
+  }
+  .commodity-default-card-short{
+    margin-bottom: 16px;
+    .commodity-card-parameter{
+      margin-bottom: 20px;
+    }
+    .commodity-card-title{
+      margin-bottom: 19px;
+    }
+  }
 
 
 }
@@ -774,5 +841,3 @@
   }
 
 }
-
-
