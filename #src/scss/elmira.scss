@@ -1,0 +1,392 @@
+header{
+    position: relative;
+}
+.delivery-conditions{
+    img{
+        float: left;
+        margin-right: 10px;
+    }
+}
+.display-content{
+    .submit-form{
+        margin: 0;
+    }
+    .small-title{
+        text-align: left;
+    }
+    table{
+        width: 100%;
+    }
+    table td{
+        
+        border-bottom: 1px solid #E2E2E2;
+        
+    }
+    table tr td:nth-of-type(odd){
+        text-transform: uppercase;
+        padding: 10px 0;
+    }
+    .quantity-selection-drop-down{
+        margin-left: 0;
+        margin-bottom: 25px;
+        .quantity-dropdown {
+            left: 24%;
+        }
+    } 
+}
+.commodity-card-price-ex-vat{
+    font-size: 18px;
+    line-height: 24px;
+    color: #202020;
+    opacity: 0.54;
+}
+.buy-with-installation{
+    background: #ECECEC;
+    border-radius: 6px;
+    li{
+        list-style-type: disc;
+    }
+}
+.cart-item{
+    border: 1px solid #E2E2E2;
+    box-sizing: border-box;
+    background-repeat: no-repeat;
+    background-position: left;
+    padding: 38px 38px 38px 120px;
+}
+.remove-cart-item{
+    color: #CC2830;
+    opacity: 0.54;
+    text-decoration: underline;
+}
+.remove-cart-item:hover{
+    opacity: 1;
+}
+.cart-content{
+    .submit-form {
+        padding: 10px 45px;
+        margin: 35px auto;
+    }
+}
+.clean-cart{
+    cursor: pointer;
+}
+.clean-cart:hover{
+    color: #CC2830;
+}
+.quantity-selected-text {
+    margin-right: 20px;
+    cursor: pointer;
+    align-items: center;
+    p{
+        border: 1px solid black;
+        padding: 5px 30px;
+    }
+  }
+  
+  .quantity-selection-drop-down {
+    position: relative;
+    margin-left: 10%;
+  }
+  
+  .quantity-dropdown {
+    opacity: 0;
+    transition: 0.5s linear all;
+    pointer-events: none;
+    position: absolute;
+    top: calc(100% + 10px);
+    left: 35%;
+    background: #FFFFFF;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
+    border-radius: 6px;
+    width: 80px;
+    text-align: center;
+    z-index: 12;
+  }
+  
+  .lanquantityguage-dropdown ul {
+    padding-left: 0;
+    margin: 0;
+    background-color: #fff;
+  }
+  
+  .quantity-dropdown.active {
+    opacity: 1;
+    pointer-events: all;
+  }
+  
+  .quantity-selected-text-inner {
+    padding: 10px;
+  }
+  
+  .quantity-selected-text-inner {
+    border-bottom: 1px solid #E2E2E2;
+  }
+  
+  .quantity-selected-text-inner a:hover {
+    color: #CC2830;
+    text-decoration: underline;
+    transition: .2s all linear;
+    cursor: pointer;
+  }
+  
+  .quantity-dropdown:after{
+    content: '';
+    display: inline-block;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-bottom: 10px solid #fff;
+    border-top: 0;
+    position: absolute;
+    top: -10px;
+    left: 31px;
+  }
+  .remove-cart-item-tablet, .commodity-card-price-mobile, .main-title-tablet, .slider-for-mobile{
+      display: none;
+  }
+  .cart-changing{
+      display: flex;
+      align-items: center;
+  }
+  .enter-via-facebook, .enter-via-gmail{
+    width: 100%;
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.4);
+    border-radius: 4px;
+    border: none;
+    background-repeat: no-repeat;
+    background-position: 10px;
+    padding: 15px 30px;
+    cursor: pointer;
+  }
+  .enter-via-facebook{
+      color: white;
+      background-color: #1877F2;
+      background-image: url('../img/cart/f_logo_RGB-Blue_1024\ 1.svg')
+  }
+  .enter-via-gmail{
+      color: #202020;
+      background-color: #fff;
+      background-image: url('../img/cart/Google__G__Logo\ 1.svg')
+  }
+  .authorization-content input, select, textarea{
+    width: 100%;
+    border-radius: 4px;
+    padding: 15px 30px;
+    border: 1px solid rgba(32, 32, 32, .54);
+    color: rgba(32, 32, 32, .54);
+  }
+  .buy-with-registration, .buy-without-registration{
+      background-color: #fff;
+      box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.4);
+      border-radius: 6px;
+      text-align: center;
+      .default-button{
+        padding: 10px 35px;
+        width: fit-content;
+        margin: 0 auto;
+      }
+  }
+  .buy-with-registration{
+      border-top-right-radius: 0;
+      border-bottom-right-radius: 0;
+  }
+  .buy-without-registration{
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+}
+.delivery-block{
+    text-align: center;
+    background: #FFFFFF;
+    border: 1px solid #E2E2E2;
+    box-sizing: border-box;
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.4);
+    border-radius: 6px;
+    transition: .3s all ease;
+    background-repeat: no-repeat;
+    background-position: center 20px;
+    background-size: 40px;
+    padding-top: 77px !important;
+    cursor: pointer;
+    .text-center{
+        font-size: 16px;
+    }
+}
+.delivery-blocks .col-xl-4:nth-of-type(1) .delivery-block{
+    background-image: url('../img/cart/pin.svg');
+}
+.delivery-blocks .col-xl-4:nth-of-type(2) .delivery-block{
+    background-image: url('../img/cart/omniva\ 1.svg');
+}
+.delivery-blocks .col-xl-4:nth-of-type(3) .delivery-block{
+    background-image: url('../img/cart/truck-delivery-outline\ 1.svg');
+}
+.delivery-block:hover{
+    background-color: #EFEFEF;
+}
+.user-data{
+    input, select, textarea{
+        background-color: transparent;
+    }
+    .default-button{
+        width: fit-content;
+        padding: 10px 55px;
+        margin: 0 auto;
+    }
+}
+.show-for-mobile{
+    display: none;
+}
+
+
+
+
+@media (max-width: 1200px){
+    .display-content .quantity-selection-drop-down{
+        .quantity-dropdown {
+            left: 30%;
+        }
+    }
+    .commodity-card-price {
+        font-size: 22px;
+    }
+}
+
+@media (max-width: 992px){
+    .buy-with-installation{
+        .row{
+            align-items: center !important;
+            .col-xl-3{
+                text-align: center;
+            }
+        }
+        .submit-form{
+            margin: 30px auto 0;
+        }
+        .commodity-card-price{
+            font-size: 36px;
+        }
+    }
+    .cart-content{
+        .commodity-card-price{
+            font-size: 20px;
+            min-width: 77px;
+        }
+    }
+    .display-content .quantity-selection-drop-down .quantity-dropdown {
+        left: 19%;
+    }
+    .authorization-content{
+        .p-5 {
+            padding: 1rem !important;
+        }
+        .delivery-block{
+            padding-top: 77px !important;
+        }
+    }
+}
+
+@media (max-width: 768px){
+    .main-title-tablet, .remove-cart-item-tablet, .slider-for-mobile{
+        display: block;
+    }
+    .main-title-pc, .remove-cart-item-pc, .clean-cart{
+        display: none;
+    }
+    .cart-item {
+        position: relative;
+        background-position: left top;
+        padding: 28px 38px 28px 120px;
+    }
+    .remove-cart-item-tablet {
+        position: absolute;
+        left: 45px;
+        bottom: 10px;
+    }
+    .quantity-selection-drop-down {
+        margin-left: 0;
+        margin-top: 10px;
+    }
+    .cart-changing{
+        display: block;
+    }
+    .quantity-dropdown {
+        left: 14%;
+    }
+    .display-content .quantity-selection-drop-down .quantity-dropdown {
+        left: 16%;
+    }
+    .small-title-pc{
+        display: none;
+    }
+    .col-xs-6{
+        width: 50%;
+    }
+    .delivery-conditions-list{
+        margin: 30px 0;
+    }
+    .buy-with-installation{
+        .commodity-card-price{
+            font-size: 20px;
+            margin-top: 40px;
+        }
+    }
+    .small-title {
+        font-size: 16px;
+    }
+    .enter-via-gmail {
+        margin: 20px 0 50px 0;
+    }
+    .hide-for-mobile{
+        display: none;
+    }
+    .show-for-mobile{
+        display: block;
+    }
+    .delivery-block{
+        margin-bottom: 20px;
+    }
+}
+
+@media (max-width: 576px){
+
+    
+}
+
+@media (max-width: 508px){
+    .quantity-dropdown {
+        left: 12%;
+    }
+    .quantity-selection-drop-down{
+        width: 50%;
+        display: inline-block;
+    }
+    .quantity-selected-text p {
+        padding: 5px 20px;
+    }
+    .cart-item{
+        background-size: 14vw;
+        padding: 10px 10px 10px 80px;
+    }
+    .remove-cart-item-tablet {
+        left: 28px;
+        bottom: 2px;
+    }
+    .commodity-card-price-pc{
+        display: none;
+    }
+   .commodity-card-price-mobile{
+        display: inline;
+    }
+}
+@media (max-width: 408px){
+    .cart-item{
+        background-size: 20vw;
+    }
+    .remove-cart-item-tablet {
+        left: 28px;
+        bottom: 16px;
+    }
+    .quantity-dropdown {
+        left: 17%;
+    }
+}
