@@ -473,11 +473,49 @@
   .service-inner-commodity{
     display: none;
   }
-
+  .quantity-input{
+    width: 35px;
+  }
+  .header_lk_cart span{
+    display: none;
+  }
+  .header_lk_profile span{
+    display: none;
+  }
+  .lk-sidebar{
+    display: block;
+  }
+  .lk-table{
+    min-width: 600px;
+  }
+  .lk-table-wrapper{
+    overflow: scroll;
+  }
+  .sidebar:after{
+    width: 50vw;
+  }
 
 }
 
 @media (max-width: 767px) {
+  .sidebar:after{
+    display: none;
+  }
+  .lk-profile-bread-crumbs{
+    display: none;
+  }
+  .profile-photo{
+    margin-right: 30px;
+  }
+  .lk-container {
+    padding-left: 15px;
+  }
+  .commodity-card-body{
+    padding-bottom: 20px;
+  }
+  .profile-overview{
+    justify-content: flex-start !important;
+  }
   .fixing-main-page-banner .fixing-banner-background{
     display: none;
   }
@@ -801,6 +839,9 @@
     .commodity-card-title{
       margin-bottom: 19px;
     }
+  }
+  .lk-arrow-back{
+    display: flex !important;
   }
 
 

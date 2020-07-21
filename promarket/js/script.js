@@ -190,34 +190,6 @@ function Burger(burger, menu, parentElement = {}) {
     }
 }
 
-let headerLangDropDownParent = 'language-selection-drop-down';
-let headerLangDropTrigger = 'language-selected-text';
-let changers = 'language-selected-text-inner';
-let headerLangDropDown = new DropDown(
-    headerLangDropDownParent,
-    headerLangDropTrigger,
-    changers
-)
-let menuBurger = new Burger(
-    '.header-burger',
-    '.header_navigation',
-)
-let headerCartDrop = new Burger(
-    '.header_cart',
-    '.header__cart__inner'
-)
-
-
-let headerShopTabs = new Tabs(
-    document.querySelectorAll('.shop__drop__down-tabs-side-container li'),
-    document.querySelector('.shop__drop__down-content-side'),
-    document.querySelector('.shop__dropping-element'),
-    '.shop__drop__down-content-side-header',
-    '.header_navigation_wrapper'
-)
-let brandProductActiveCommodityWrapper = document
-    .querySelector('.fixing-type-for-device-row');
-
 function makeCommodityActive(commodityWrapper) {
     try {
         this.commodity = commodityWrapper.children
@@ -251,8 +223,6 @@ function makeCommodityActive(commodityWrapper) {
         el.classList.remove('active')
     }
 }
-
-new makeCommodityActive(brandProductActiveCommodityWrapper);
 
 function Tabs(tabTrigger, tabContentWrapper, parentElement, closeButtonSelectorName,
               overflowingElement) {
@@ -309,7 +279,7 @@ function Tabs(tabTrigger, tabContentWrapper, parentElement, closeButtonSelectorN
     }
 }
 
-function Collapser(collapsTriggerClassName, collapsingClass, parentClassName) {
+function Collapser(collapsTriggerClassName, collapsingClass, parentClassName,) {
     this.parentClassName = parentClassName
     this.collapsers = document.getElementsByClassName(collapsTriggerClassName);
     this.collapsingClass = collapsingClass
@@ -334,9 +304,6 @@ function Collapser(collapsTriggerClassName, collapsingClass, parentClassName) {
 
     }
 }
-
-new Collapser('header__collapse', 'shop-dropdown-wrapper', '.header__shop__link');
-
 
 function CardCounter(trigger) {
     this.trigger = trigger;
@@ -422,11 +389,99 @@ function CardCounter(trigger) {
         self.dropDownWrapper.classList.remove('active')
     }
 }
+
+function ProgramTabs(tabTrigger, tabContentWrapper, parentElement,closeButtonSelectorName) {
+    this.tab = tabTrigger;
+    this.tabContent = tabContentWrapper;
+    this.parent = parentElement;
+    let self = this
+    this.closeButtons = [];
+    Array.from(this.tabContent.children).forEach(child => {
+        this.closeButtons.push(child.querySelector(closeButtonSelectorName))
+    })
+
+    Array.from(this.tab).forEach(tab => {
+        tab.addEventListener('click', changeTheTab)
+    })
+
+    this.closeButtons.forEach(el => {
+        el.addEventListener('click', closeTabs);
+    })
+    function closeTabs() {
+        Array.from(self.tabContent.children).forEach(tab => {
+            tab.classList.remove('active')
+        })
+        Array.from(self.tab).forEach(tab => {
+            tab.classList.remove('active')
+        })
+
+    }
+
+    function changeTheTab(e) {
+        e.preventDefault()
+        let index = Array.from(this.parentNode.children).indexOf(this)
+        closeTabs()
+        self.tabContent.children[index].classList.add('active')
+        this.classList.add('active')
+
+    }
+}
+
+let headerLangDropDownParent = 'language-selection-drop-down';
+let headerLangDropTrigger = 'language-selected-text';
+let changers = 'language-selected-text-inner';
+let headerLangDropDown = new DropDown(
+    headerLangDropDownParent,
+    headerLangDropTrigger,
+    changers
+)
+let menuBurger = new Burger(
+    '.header-burger',
+    '.header_navigation',
+)
+let headerCartDrop = new Burger(
+    '.header_cart',
+    '.header__cart__inner'
+)
+
+
+let headerShopTabs = new Tabs(
+    document.querySelectorAll('.shop__drop__down-tabs-side-container li'),
+    document.querySelector('.shop__drop__down-content-side'),
+    document.querySelector('.shop__dropping-element'),
+    '.shop__drop__down-content-side-header',
+    '.header_navigation_wrapper'
+)
+let brandProductActiveCommodityWrapper = document
+    .querySelector('.fixing-type-for-device-row');
+
+
+
+new makeCommodityActive(brandProductActiveCommodityWrapper);
+
+
+new Collapser('header__collapse', 'shop-dropdown-wrapper', '.header__shop__link');
+
+
+
 let allCards = [];
 let cardDropDowns = document.getElementsByClassName('quantity-trigger-wrapper');
 Array.from(cardDropDowns).forEach(card => {
     let cardCounter = new CardCounter(card);
     allCards.push(cardCounter);
 });
+
+new DropDown(
+    'address-drop-down-wrapper',
+    'address-drop-down-trigger',
+    'address-changer'
+)
+
+let lkTabs = new ProgramTabs(
+    document.querySelectorAll('.lk-tabs-changers .lk-tabs-changer'),
+    document.querySelector('.lk-tabs-wrapper'),
+    document.querySelector('.lk-main'),
+    '.lk-arrow-back',
+)
 
 
