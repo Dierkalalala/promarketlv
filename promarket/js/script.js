@@ -362,7 +362,18 @@ function CardDropDown(className) {
     function changeInputValue(e){
         this.previousElementSibling
             .querySelector('.quantity-input').value = e.target.innerText;
-        console.log(this);
+
+
+        let swiperSlide = this.closest('.swiper-slide');
+        if(swiperSlide) {
+            let swiperWrapper = swiperSlide.closest('.swiper-container')
+            let slideIndex = swiperSlide.getAttribute('data-swiper-slide-index');
+            let swiperSlideClones =
+                swiperWrapper.querySelectorAll(`[data-swiper-slide-index="${slideIndex}"]`);
+            Array.from(swiperSlideClones).forEach(slide => {
+                slide.querySelector('.quantity-input').value = e.target.innerText;
+            })
+        }
 
     }
 
