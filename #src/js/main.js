@@ -18,10 +18,10 @@ if (screen.width > 991) {
         slidesPerView: 4,
     })
     comSwiperSecond.on('slideChange', function () {
-        cardDrop.closeDrop();
+        Array.from(allCards).forEach(cardDrop => {cardDrop.closeDrop()});
     });
     comSwiperFirst.on('slideChange', function () {
-        cardDrop.closeDrop();
+        Array.from(allCards).forEach(cardDrop => {cardDrop.closeDrop()});
     });
 }
 if (screen.width < 991) {
@@ -258,7 +258,6 @@ function Tabs(tabTrigger, tabContentWrapper, parentElement, closeButtonSelectorN
             self.parent.classList.add('active')
             self.tabContent.children[index].classList.add('active')
             this.classList.add('active')
-            console.log(self.tabContent)
             self.tabContent.classList.add('active')
             if (screen.width < 991) {
                 self.overflowingElement.classList.add('overflow-hidden')
@@ -283,7 +282,6 @@ function Collapser(collapsTriggerClassName, collapsingClass, parentClassName) {
 
     function toggleCollapse(e) {
         let parent = this.closest(self.parentClassName);
-        console.log(parent)
         let openingElement = parent.getElementsByClassName(self.collapsingClass)
         parent.classList.toggle('active')
         Array.from(openingElement).forEach(el => {
@@ -301,8 +299,10 @@ function Collapser(collapsTriggerClassName, collapsingClass, parentClassName) {
 new Collapser('header__collapse', 'shop-dropdown-wrapper', '.header__shop__link');
 
 
-function CardDropDown(className) {
-    this.trigger = document.getElementsByClassName(className);
+function CardCounter(trigger) {
+    this.trigger = trigger;
+
+    this.input = this.trigger.previousElementSibling.querySelector('.quantity-input')
 
     this.parentClassList = 'quantity-drop';
 
@@ -311,28 +311,21 @@ function CardDropDown(className) {
 
     let self = this;
 
-    Array.from(this.trigger).forEach(trig => {
-        trig.addEventListener('click', openCard)
+    this.trigger.addEventListener('click', openCard)
 
-    })
+    this.input.addEventListener('input', changeInputValue.bind(this.trigger));
 
-    function fillTheMenu(quantityNumbers) {
-
-    }
-
-    function changeInputValue(e){
-        this.previousElementSibling
-            .querySelector('.quantity-input').value = e.target.innerText;
-
-
+    function changeInputValue(e) {
+        let value = e.target.value || e.target.innerText;
+        self.input.value = value
         let swiperSlide = this.closest('.swiper-slide');
-        if(swiperSlide) {
+        if (swiperSlide) {
             let swiperWrapper = swiperSlide.closest('.swiper-container')
             let slideIndex = swiperSlide.getAttribute('data-swiper-slide-index');
             let swiperSlideClones =
                 swiperWrapper.querySelectorAll(`[data-swiper-slide-index="${slideIndex}"]`);
             Array.from(swiperSlideClones).forEach(slide => {
-                slide.querySelector('.quantity-input').value = e.target.innerText;
+                slide.querySelector('.quantity-input').value = value;
             })
         }
 
@@ -349,16 +342,17 @@ function CardDropDown(className) {
         top: ${topAxis}px;
         `;
         let lis = self.dropDownWrapper.querySelectorAll('li');
-        if(!self.dropDownWrapper.classList.contains('active')){
+        if (!self.dropDownWrapper.classList.contains('active')) {
             self.dropDownWrapper.classList.add('active')
             Array.from(lis).forEach(li => {
                 li.onclick = changeInputValue.bind(this)
             })
-        }else {
+        } else {
             self.dropDownWrapper.classList.remove('active')
         }
 
     }
+
     function closeDrop(e) {
         let path = e.composedPath();
         let isClosing = true;
@@ -368,7 +362,7 @@ function CardDropDown(className) {
                     isClosing = false
                 }
             } catch (e) {
-                console.log(e)
+                void e
             }
         })
         if (isClosing) {
@@ -379,6 +373,7 @@ function CardDropDown(className) {
             self.dropDownWrapper.classList.remove('active')
         }
     }
+
     document.addEventListener('click', closeDrop)
     this.closeDrop = function () {
         let lis = self.dropDownWrapper.querySelectorAll('li');
@@ -388,5 +383,10 @@ function CardDropDown(className) {
         self.dropDownWrapper.classList.remove('active')
     }
 }
+let allCards = [];
+let cardDropDowns = document.getElementsByClassName('quantity-trigger-wrapper');
+Array.from(cardDropDowns).forEach(card => {
+    let cardCounter = new CardCounter(card);
+    allCards.push(cardCounter);
+});
 
-let cardDrop = new CardDropDown('quantity-trigger-wrapper');
