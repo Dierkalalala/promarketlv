@@ -3897,6 +3897,10 @@ input[type="time"] {
   overflow-y: visible;
 }
 
+.quantity-trigger-wrapper {
+  cursor: pointer;
+}
+
 @media only screen and (min-width: 35em) {
   /* Style adjustments for viewports that meet the condition */
 }

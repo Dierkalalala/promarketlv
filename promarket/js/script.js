@@ -352,15 +352,18 @@ function CardDropDown(className) {
 
     Array.from(this.trigger).forEach(trig => {
         trig.addEventListener('click', openCard)
-        
+
     })
 
-    function fillTheMenu() {
+    function fillTheMenu(quantityNumbers) {
 
     }
 
-    function changeInputValue(){
-        console.log(this.innerText)
+    function changeInputValue(e){
+        this.previousElementSibling
+            .querySelector('.quantity-input').value = e.target.innerText;
+        console.log(this);
+
     }
 
     function openCard() {
@@ -372,12 +375,17 @@ function CardDropDown(className) {
         self.dropDownWrapper.style.cssText = `
         left: ${leftAxis}px;
         top: ${topAxis}px;
-    `;
-        self.dropDownWrapper.classList.add('active')
+        `;
         let lis = self.dropDownWrapper.querySelectorAll('li');
-        Array.from(lis).forEach(li => {
-            li.addEventListener('click', changeInputValue)
-        })
+        if(!self.dropDownWrapper.classList.contains('active')){
+            self.dropDownWrapper.classList.add('active')
+            Array.from(lis).forEach(li => {
+                li.onclick = changeInputValue.bind(this)
+            })
+        }else {
+            self.dropDownWrapper.classList.remove('active')
+        }
+
     }
     function closeDrop(e) {
         let path = e.composedPath();
@@ -392,11 +400,19 @@ function CardDropDown(className) {
             }
         })
         if (isClosing) {
+            let lis = self.dropDownWrapper.querySelectorAll('li');
+            Array.from(lis).forEach(li => {
+                li.removeEventListener('click', changeInputValue.bind(this))
+            })
             self.dropDownWrapper.classList.remove('active')
         }
     }
     document.addEventListener('click', closeDrop)
     this.closeDrop = function () {
+        let lis = self.dropDownWrapper.querySelectorAll('li');
+        Array.from(lis).forEach(li => {
+            li.removeEventListener('click', changeInputValue.bind(this))
+        })
         self.dropDownWrapper.classList.remove('active')
     }
 }
