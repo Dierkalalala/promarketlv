@@ -69,3 +69,23 @@ let quantityDropDown = new DropDown(
     quantityDropTrigger,
     quantitychangers
 )
+
+
+
+let cityDropDownParent = 'city-selection-drop-down';
+let cityDropTrigger = 'city-selected-text';
+let citychangers = 'city-selected-text-inner';
+let cityDropDown = new DropDown(
+    cityDropDownParent,
+    cityDropTrigger,
+    citychangers
+)
+
+let paymentDropDownParent = 'payment-selection-drop-down';
+let paymentDropTrigger = 'payment-selected-text';
+let paymentchangers = 'payment-selected-text-inner';
+let paymentDropDown = new DropDown(
+    paymentDropDownParent,
+    paymentDropTrigger,
+    paymentchangers
+)
