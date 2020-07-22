@@ -57,10 +57,14 @@ if (screen.width > 991) {
         slidesPerView: 4,
     })
     comSwiperSecond.on('slideChange', function () {
-        Array.from(allCards).forEach(cardDrop => {cardDrop.closeDrop()});
+        Array.from(allCards).forEach(cardDrop => {
+            cardDrop.closeDrop()
+        });
     });
     comSwiperFirst.on('slideChange', function () {
-        Array.from(allCards).forEach(cardDrop => {cardDrop.closeDrop()});
+        Array.from(allCards).forEach(cardDrop => {
+            cardDrop.closeDrop()
+        });
     });
 }
 if (screen.width < 991) {
@@ -76,15 +80,25 @@ if (screen.width < 991) {
     )
     let closeFormSearch = document.querySelector('.close_form_search');
     closeFormSearch.addEventListener('click', menuBurger.closeBurger)
-    /*let commodityCardPrice = document.querySelectorAll('.commodity-card-price');
-    Array.from(commodityCardPrice).forEach(card => {
-      let parent = card.closest('.commodity-default-card');
-      parent.querySelector('.commodity-card-parameter').prepend(card);
-    })*/
     let shopDropDownLis = document.querySelectorAll('shop__drop__down-tabs-side-container ul > li')
     Array.from(shopDropDownLis).forEach(el => {
         el.classList.remove('active');
     })
+}
+if (screen.width < 767) {
+    try {
+        let lkTabsWrapper = document.getElementsByClassName('lk-tabs-wrapper')[0];
+        Array.from(lkTabsWrapper.children).forEach(child => {
+            child.classList.remove('active')
+        })
+        let tabsChanger = document.getElementsByClassName('lk-tabs-changer');
+        Array.from(tabsChanger).forEach(changer => {
+            changer.classList.remove('active')
+        })
+
+    } catch (e) {
+        void e
+    }
 }
 
 function DropDown(parent, trigger, changers) {
@@ -390,7 +404,7 @@ function CardCounter(trigger) {
     }
 }
 
-function ProgramTabs(tabTrigger, tabContentWrapper, parentElement,closeButtonSelectorName) {
+function ProgramTabs(tabTrigger, tabContentWrapper, parentElement, closeButtonSelectorName) {
     this.tab = tabTrigger;
     this.tabContent = tabContentWrapper;
     this.parent = parentElement;
@@ -407,6 +421,7 @@ function ProgramTabs(tabTrigger, tabContentWrapper, parentElement,closeButtonSel
     this.closeButtons.forEach(el => {
         el.addEventListener('click', closeTabs);
     })
+
     function closeTabs() {
         Array.from(self.tabContent.children).forEach(tab => {
             tab.classList.remove('active')
@@ -414,6 +429,7 @@ function ProgramTabs(tabTrigger, tabContentWrapper, parentElement,closeButtonSel
         Array.from(self.tab).forEach(tab => {
             tab.classList.remove('active')
         })
+        self.parent.classList.remove('active')
 
     }
 
@@ -423,6 +439,7 @@ function ProgramTabs(tabTrigger, tabContentWrapper, parentElement,closeButtonSel
         closeTabs()
         self.tabContent.children[index].classList.add('active')
         this.classList.add('active')
+        self.parent.classList.add('active')
 
     }
 }
@@ -456,12 +473,10 @@ let brandProductActiveCommodityWrapper = document
     .querySelector('.fixing-type-for-device-row');
 
 
-
 new makeCommodityActive(brandProductActiveCommodityWrapper);
 
 
 new Collapser('header__collapse', 'shop-dropdown-wrapper', '.header__shop__link');
-
 
 
 let allCards = [];
@@ -476,13 +491,16 @@ new DropDown(
     'address-drop-down-trigger',
     'address-changer'
 )
-
-let lkTabs = new ProgramTabs(
-    document.querySelectorAll('.lk-tabs-changers .lk-tabs-changer'),
-    document.querySelector('.lk-tabs-wrapper'),
-    document.querySelector('.lk-main'),
-    '.lk-arrow-back',
-)
+try {
+    let lkTabs = new ProgramTabs(
+        document.querySelectorAll('.lk-tabs-changers .lk-tabs-changer'),
+        document.querySelector('.lk-tabs-wrapper'),
+        document.querySelector('.lk-main'),
+        '.lk-arrow-back',
+    )
+} catch (e) {
+    void e
+}
 
 
 if (screen.width < 768) {
@@ -497,52 +515,6 @@ if (screen.width < 768) {
     })
 }
 //не работает.
-
-
-
-
-function DropDown(parent, trigger, changers) {
-    try {
-        this.parent = document.getElementsByClassName(parent)[0]
-        this.trigger = this.parent.getElementsByClassName(trigger)[0]
-        this.changers = this.parent.getElementsByClassName(changers)
-
-        let self = this
-        Array.from(this.changers).forEach(changer => {
-            changer.addEventListener('click', changeTheTabValue)
-        })
-
-        function changeTheTabValue() {
-            let text = this.innerText
-            self.trigger.getElementsByClassName('changing')[0].innerText = text
-            self.trigger.nextElementSibling.classList.remove('active')
-        }
-
-        this.trigger.addEventListener('click', toggleActive)
-
-        function toggleActive(e) {
-            this.nextElementSibling.classList.toggle('active')
-        }
-
-        document.addEventListener('click', closeTabs)
-
-        function closeTabs(e) {
-            try {
-                if (e.target.parentNode.classList.contains('select-drop-down') || (e.target.parentNode.classList.contains(parent))) {
-                    return false
-                } else if (e.target.parentNode.classList.contains(trigger)) {
-                    return false
-                }
-                self.trigger.nextElementSibling.classList.remove('active')
-            } catch (e) {
-                void e
-            }
-        }
-    } catch (e) {
-        void e
-    }
-}
-
 
 let quantityDropDownParent = 'quantity-selection-drop-down';
 let quantityDropTrigger = 'quantity-selected-text';

@@ -2,7 +2,10 @@
   .header_navigation_wrapper li {
     margin-right: 15px;
   }
-
+  .commodity .swiper-container{
+    width: auto;
+    margin-left: 0;
+  }
   .logotype {
     margin-right: 15px;
   }
@@ -21,6 +24,46 @@
 }
 
 @media (max-width: 991px) {
+  .profile-first-row > .d-flex{
+    flex-wrap: wrap;
+  }
+  .profile-details-name{
+    max-width: none;
+  }
+  .profile-details-name{
+    font-size: 28px;
+    line-height: 40px;
+  }
+  .profile-photo{
+    min-width: 48px;
+    margin-right: 15px;
+  }
+  .profile-name{
+    line-height: 24px;
+  }
+  .password-change a{
+    display: block;
+    text-align: center;
+    margin: 14px auto;
+  }
+  .profile-data{
+    width: auto;
+  }
+  .sidebar-item{
+    padding-left: 5px;
+  }
+  .profile-details-photo{
+    max-width: 126px;
+    max-height: 126px;
+    min-width: 126px;
+    min-height: 126px;
+  }
+  .password-change div{
+    display: none;
+  }
+  .password-change{
+    width: 100%;
+  }
   .shop-dropdown-wrapper{
     width: 304px;
     position: static;
@@ -494,12 +537,71 @@
   .sidebar:after{
     width: 50vw;
   }
-
+  .sidebar-item img {
+    margin-right: 10px;
+  }
 }
 
 @media (max-width: 767px) {
   .sidebar:after{
     display: none;
+  }
+  .profile-details-name{
+    font-size: 23px;
+  }
+  .radio-type span{
+    text-align: left;
+  }
+  .radio-type input{
+    min-width: 20px;
+    margin-right: 17px;
+    position: relative;
+    top: 4px;
+  }
+  .radio-buttons-row .radio-type{
+    align-items: flex-start;
+  }
+  .radio-type input:checked ~ span:after{
+    left: 5px;
+    top: 9px;
+  }
+  .lk-main{
+    min-height: 300px;
+  }
+  .lk-sidebar{
+    z-index: 0;
+    position: absolute;
+  }
+  .lk-main.active .lk-container{
+    background-color: #fafafa;
+  }
+  .lk-personal-data {
+    padding-top: 20px;
+  }
+  .lk-table-wrapper{
+    padding-top: 0;
+  }
+  .lk-table-container{
+    padding-top: 20px;
+  }
+  .lk-table{
+    margin-top: 0px;
+  }
+  .lk-first-row{
+    padding-top: 0;
+  }
+  .lk-tabs-wrapper > *{
+    display: none;
+  }
+  .lk-tabs-wrapper > *.active{
+    display: block;
+    animation: fadeIn 0.5s linear;
+  }
+  .lk-table{
+    padding-bottom: 50px;
+  }
+  .address-drop-down-trigger{
+    background-color: #fafafa;
   }
   .lk-profile-bread-crumbs{
     display: none;
