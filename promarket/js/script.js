@@ -3257,4 +3257,3 @@ let paymentDropDown = new DropDown(
     paymentDropTrigger,
     paymentchangers
 )
-

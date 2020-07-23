@@ -168,7 +168,7 @@ header{
       background-color: #fff;
       background-image: url('../img/cart/Google__G__Logo\ 1.svg')
   }
-  .authorization-content input, select, textarea{
+  .authorization-content input[type="text"], .authorization-content input[type="tel"], .authorization-content input[type="email"], select, textarea{
     width: 100%;
     border-radius: 4px;
     padding: 15px 30px;
@@ -235,16 +235,6 @@ header{
 }
 .show-for-mobile{
     display: none;
-}
-input[type="radio"]{
-    width: fit-content;
-    margin-right: 15px;
-}
-.radio-btns{
-    text-align: center;
-    label{
-        margin-right: 30px;
-    }
 }
 .city-selected-text {
     cursor: pointer;

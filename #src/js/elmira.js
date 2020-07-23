@@ -21,8 +21,6 @@ let quantityDropDown = new DropDown(
 )
 
 
-
-
 let cityDropDownParent = 'city-selection-drop-down';
 let cityDropTrigger = 'city-selected-text';
 let citychangers = 'city-selected-text-inner';

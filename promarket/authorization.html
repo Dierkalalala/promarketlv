@@ -781,11 +781,19 @@
                 <div class="col-xl-6 col-lg-6 col-md-12 m-auto">
                     <div class="small-title text-center mb-4 mt-5">ДАННЫЕ ПОКУПАТЕЛЯ</div>
                     <form action="POST" class="user-data">
-                        <div class="radio-btns my-3">
-                            <input type="radio" name="user" id="individual">
-                            <label for = "individual">Физическое лицо</label>
-                            <input type="radio" name="user" id="entity">
-                            <label for = "entity">Юридическое лицо</label>
+                        <div class="d-flex radio-buttons-row align-items-center justify-content-center">
+                            <label class="radio-type">
+                                <input type="radio" name="identification-type">
+                                <span>
+                                    Физическое лицо
+                                </span>
+                            </label>
+                            <label class="radio-type">
+                                <input type="radio" name="identification-type">
+                                <span>
+                                    Юридическое лицо
+                                </span>
+                            </label>
                         </div>
                         <input type="text" placeholder="Имя" class="my-2">
                         <input type="text" placeholder="Фамилия" class="my-2">

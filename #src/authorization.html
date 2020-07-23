@@ -280,7 +280,7 @@
                         <input type="text" placeholder="Город" class="my-2">
                         <input type="text" placeholder="Адрес доставки" class="my-2">
                         <input type="email" placeholder="Почтовый индекс" class="my-2">
-                        <textarea name="comments" id="comments" cols="30" rows="10" placeholder="Комментарий к заказу"></textarea>
+                        <textarea name="comments" id="comments1" cols="30" rows="10" placeholder="Комментарий к заказу"></textarea>
                     </form>
                 </div>
             </div>
@@ -288,17 +288,25 @@
                 <div class="col-xl-6 col-lg-6 col-md-12 m-auto">
                     <div class="small-title text-center mb-4 mt-5">ДАННЫЕ ПОКУПАТЕЛЯ</div>
                     <form action="POST" class="user-data">
-                        <div class="radio-btns my-3">
-                            <input type="radio" name="user" id="individual">
-                            <label for = "individual">Физическое лицо</label>
-                            <input type="radio" name="user" id="entity">
-                            <label for = "entity">Юридическое лицо</label>
+                        <div class="d-flex radio-buttons-row align-items-center justify-content-center">
+                            <label class="radio-type">
+                                <input type="radio" name="identification-type">
+                                <span>
+                                    Физическое лицо
+                                </span>
+                            </label>
+                            <label class="radio-type">
+                                <input type="radio" name="identification-type">
+                                <span>
+                                    Юридическое лицо
+                                </span>
+                            </label>
                         </div>
                         <input type="text" placeholder="Имя" class="my-2">
                         <input type="text" placeholder="Фамилия" class="my-2">
                         <input type="email" placeholder="Электронная почта" class="my-2">
                         <input type="tel" placeholder="Ваш телефон" class="my-2">
-                        <textarea name="comments" id="comments" class="show-for-mobile" cols="30" rows="10" placeholder="Комментарий к заказу"></textarea>
+                        <textarea name="comments" id="comments2" class="show-for-mobile" cols="30" rows="10" placeholder="Комментарий к заказу"></textarea>
 
                         <div class="small-title text-center mb-4 mt-5">Способ оплаты</div>
                         <div class="payment-selection-drop-down my-2">
