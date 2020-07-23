@@ -64,10 +64,16 @@ if (screen.width < 767) {
 
 function DropDown(parent, trigger, changers) {
     try {
-        this.parent = document.getElementsByClassName(parent)[0]
-        this.trigger = this.parent.getElementsByClassName(trigger)[0]
-        this.changers = this.parent.getElementsByClassName(changers)
 
+        if(typeof parent == "string"){
+            this.parent = document.getElementsByClassName(parent)[0]
+            this.trigger = this.parent.getElementsByClassName(trigger)[0]
+            this.changers = this.parent.getElementsByClassName(changers)
+        } else {
+            this.parent = parent;
+            this.trigger = trigger;
+            this.changers = changers
+        }
         let self = this
         Array.from(this.changers).forEach(changer => {
             changer.addEventListener('click', changeTheTabValue)
@@ -88,15 +94,19 @@ function DropDown(parent, trigger, changers) {
         document.addEventListener('click', closeTabs)
 
         function closeTabs(e) {
-            try {
-                if (e.target.parentNode.classList.contains('select-drop-down') || (e.target.parentNode.classList.contains(parent))) {
-                    return false
-                } else if (e.target.parentNode.classList.contains(trigger)) {
-                    return false
+            let isClosing = true
+            let path = e.composedPath();
+            Array.from(path).forEach(el => {
+                try {
+                    if (el === self.parent) {
+                        isClosing = false
+                    }
+                } catch (e) {
+                    void e
                 }
+            })
+            if(isClosing){
                 self.trigger.nextElementSibling.classList.remove('active')
-            } catch (e) {
-                void e
             }
         }
     } catch (e) {
@@ -405,6 +415,8 @@ function ProgramTabs(tabTrigger, tabContentWrapper, parentElement, closeButtonSe
     }
 }
 
+
+
 let headerLangDropDownParent = 'language-selection-drop-down';
 let headerLangDropTrigger = 'language-selected-text';
 let changers = 'language-selected-text-inner';
@@ -462,4 +474,35 @@ try {
 } catch (e) {
     void e
 }
+let costSliderElement = document.getElementById('cost_slider');
+let costSlider = noUiSlider.create(costSliderElement, {
+    start: [costSliderElement.getAttribute('data-min'),
+        costSliderElement.getAttribute('data-max')
+    ],
+    connect: true,
+    range: {
+        'min': +(costSliderElement.getAttribute('data-min')),
+        'max': +(costSliderElement.getAttribute('data-max'))
+    }
+});
+costSlider.on('update', function(values) {
+    console.log(values);
+    let startingValue = +values[0];
+    let endingValue = +values[1];
+    let startingValueInput = document.getElementsByClassName('starting-value')[0];
+    let endingValueInput = document.getElementsByClassName('ending-value')[0];
+    startingValueInput.value = +(startingValue).toFixed();
+    endingValueInput.value = +(endingValue).toFixed();
+});
 
+let sortingDropDown = document.getElementsByClassName('drop-down-sorting');
+Array.from(sortingDropDown).forEach(el => {
+    new DropDown(
+        el,
+        el.querySelector('.sorting-filter-trigger'),
+        el.querySelectorAll('sorting-filter-content-changers')
+    )
+})
+
+new Collapser('market-sorting-trigger', 'sorting-controller', '.collapsing-control');
+new Collapser('cost-filter-trigger', 'filter-content', '.filter-el');

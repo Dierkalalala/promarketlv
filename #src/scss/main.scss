@@ -1394,7 +1394,7 @@ main {
   margin-bottom: 30px;
 }
 .brand-product {
-  padding-left: 15px;
+  padding-left: 24px;
 }
 .fixing-type-for-device-row .fixing-details-card-tick{
   position: absolute;
@@ -2186,11 +2186,179 @@ main {
 .brand-product .fixing-type-for-device-row{
   padding-bottom: 40px;
 }
-
-
-
-
-
-
-
-
+.market-sorting-trigger{
+  margin-right: 37px;
+}
+.market_sorting svg{
+  opacity: 0.54;
+  transition: 0.3s linear all;
+}
+.market-sorting-trigger span{
+  transition: 0.3s linear all;
+}
+.market_sorting{
+  svg:hover{
+    opacity: 1;
+    fill: #CC2830;
+  }
+  .market-sorting-trigger:hover svg{
+    opacity: 1;
+    fill: #CC2830;
+  }
+  .market-sorting-trigger:hover span{
+    text-decoration: underline;
+    color: #CC2830;
+  }
+}
+.sidebar-search input{
+  height: 40px;
+  background-color: #fff;
+  padding-left: 40px;
+}
+.sidebar-search input::placeholder{
+  text-transform: uppercase;
+  font-size: 14px;
+}
+.footer .footer-logotype:hover{
+  padding-left: 0;
+}
+.cost-filter-trigger p{
+  margin-bottom: 0;
+  font-size: 14px;
+  text-transform: uppercase;
+  color: #202020;
+}
+.cost-filter-trigger{
+  margin-bottom: 26px;
+  cursor: pointer;
+}
+.range-inputs-wrapper input{
+  border-radius: 6px;
+  border: 2px solid #E2E2E2;
+  width: 78px;
+  height: 40px;
+  outline: none;
+  padding-left: 12px;
+}
+.range-inputs-wrapper label span{
+  margin-right: 10px;
+}
+.filter-el{
+  margin-bottom: 0px;
+  transition: 0.5s linear all;
+}
+.filter-el.active{
+  margin-bottom: 20px;
+}
+.cost-slider{
+  margin-bottom: 25px;
+}
+.noUi-connect{
+  background: #CC2830;
+}
+.noUi-horizontal .noUi-handle {
+  width: 12px;
+  height: 12px;
+  right: -7px;
+  top: -6px;
+  background: #CC2830;
+  box-shadow: none;
+  border-radius: 50%;
+  border: none;
+  outline: none;
+}
+.noUi-handle:before, .noUi-handle:after{
+  display: none;
+}
+.noUi-target{
+  border: none;
+}
+.sidebar .checkbox-label{
+  margin-bottom: 10px;
+  span{
+    font-size: 14px;
+    transition: 0.3s linear all;
+  }
+}
+.checkbox-label:hover{
+  span{
+    text-decoration: underline;
+  }
+}
+.sorting-pages .sorting{
+  margin-right: 90px;
+}
+.sorting-pages{
+  padding: 15px 0;
+  border-top: 1px solid #E2E2E2;
+}
+.muted{
+  opacity: 0.54;
+}
+.sorting-controller .sorting-filter .dropping__element__wrapper{
+  top: 130%;
+  width: 100%;
+  right: 0;
+  left: 0;
+  padding: 0;
+  opacity: 0;
+  z-index: -2;
+  pointer-events: none;
+}
+.sorting-controller .sorting-filter .dropping__element__wrapper.active{
+  opacity: 1;
+  z-index: 1;
+  pointer-events: all;
+}
+.sorting-controller .sorting-filter .sorting-filter-content:after{
+  left: 50%;
+  transform: translateX(-50%);
+}
+.sorting-filter{
+  position: relative;
+}
+.sorting-filter-content-changers{
+  padding: 12px;
+  text-align: center;
+  border-bottom: 1px solid #E2E2E2;
+}
+.sorting-filter-trigger{
+  cursor: pointer;
+}
+.shop-main-wrapper{
+  .bread-crumbs{
+    margin-bottom: 17px;
+  }
+}
+.sorting-controller{
+  max-height: 0;
+  overflow: hidden;
+  transition: 0.7s linear all;
+}
+.collapsing-control.active .sorting-controller{
+  overflow: visible;
+}
+.collapsing-control{
+  margin-bottom: 30px;
+}
+.additional-commodities-wrapper .commodity-default-card{
+  box-sizing: content-box;
+}
+.filter-content{
+  max-height: 0;
+  opacity: 0;
+  transition: 0.5s linear all;
+  overflow: hidden;
+}
+.filter-el img{
+  transition: 0.5s linear all;
+}
+.filter-el.active {
+  .filter-content{
+    overflow: visible;
+    opacity: 1;
+  }
+  img{
+    transform: rotate(-90deg);
+  }
+}
