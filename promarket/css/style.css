@@ -3383,6 +3383,7 @@ main {
   padding-left: 28px;
   font-size: 16px;
   line-height: 24px;
+  transition: 0.3s linear all;
 }
 
 .submit-form {
@@ -4664,6 +4665,131 @@ input[type="time"] {
   margin-bottom: 20px;
   display: none !important;
   cursor: pointer;
+}
+
+.lk-order-arrow-back {
+  display: flex !important;
+  margin-top: 40px;
+  margin-bottom: 20px;
+  cursor: pointer;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+}
+
+.lk-order-arrow-back span {
+  transition: .3s linear all;
+}
+
+.lk-order-arrow-back:hover span {
+  color: #CC2830;
+}
+
+.lk-inner-row .small-title:first-child {
+  margin-right: 35px;
+}
+
+.lk-inner-card {
+  border: 1px solid #E2E2E2;
+  height: 112px;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.lk-input-wrapper input {
+  border: 2px solid rgba(0, 0, 0, 0.54);
+  width: 48px;
+  height: 29px;
+  text-align: center;
+  outline: none;
+  background-color: transparent;
+}
+
+.lk-card-title {
+  max-width: 460px;
+  height: 55px;
+  margin-bottom: 5px;
+}
+
+.lk-text-wrapper {
+  margin-right: 15px;
+}
+
+.lk-card-link {
+  font-size: 14px;
+  line-height: 24px;
+  -webkit-text-decoration-line: underline;
+  text-decoration-line: underline;
+  color: #CC2830;
+  opacity: 0.54;
+  transition: 0.3s linear all;
+}
+
+.lk-card-link:hover {
+  opacity: 1;
+}
+
+.lk-card-cost {
+  margin: 0 auto;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 24px;
+  color: #202020;
+}
+
+.lk-inner-card-image-wrap {
+  margin-right: 20px;
+}
+
+.lk-inner-card:last-child {
+  margin-bottom: 60px;
+}
+
+.lk-inner-card-image-wrap {
+  height: 108px;
+}
+
+.lk-inner-card-image-wrap img {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.lk-inner-table-container {
+  display: block;
+}
+
+.lk-order-arrow-back svg {
+  margin-right: 10px;
+  transition: 0.3s linear all;
+}
+
+.lk-order-arrow-back:hover svg {
+  margin-right: 15px;
+}
+
+.header-burger.open:after {
+  content: '';
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  background-color: rgba(0, 0, 0, 0.15);
+}
+
+.mobile-social-links {
+  display: none;
+}
+
+.brand-product .fixing-inner-child-content {
+  padding-left: 0;
+}
+
+.brand-product .fixing-type-for-device-row {
+  padding-bottom: 40px;
 }
 
 @media only screen and (min-width: 35em) {
@@ -8052,6 +8178,25 @@ input[type="time"] {
 }
 
 @media (max-width: 991px) {
+  .brand-product {
+    padding-left: 0px;
+  }
+
+  .mobile-social-links {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 5px;
+  }
+
+  .mobile-social-links .mobile-social-link:first-child {
+    margin-right: 77px;
+  }
+
+  .mobile-social-link svg {
+    fill: #202020;
+  }
+
   .profile-first-row > .d-flex {
     flex-wrap: wrap;
   }
@@ -8184,11 +8329,16 @@ input[type="time"] {
     align-items: flex-start !important;
     padding-left: 16px;
     padding-top: 56px;
+    padding-right: 16px;
   }
 
   .language-selection-drop-down {
-    padding-left: 30px;
+    padding-left: 40px;
     position: relative;
+  }
+
+  .language-selected-text img {
+    margin-left: 2px;
   }
 
   .language-selection-drop-down:before {
@@ -8210,7 +8360,7 @@ input[type="time"] {
     margin-right: 0px;
     width: 100%;
     line-height: 56px;
-    border-bottom: 1px solid #E2E2E2;
+    border-bottom: 1.5px solid #E2E2E2;
   }
 
   .header_navigation_wrapper .language-wrapper {
@@ -8528,6 +8678,7 @@ input[type="time"] {
     display: block;
     right: 20px;
     transition: 0.3s linear all;
+    z-index: -1;
   }
 
   .header__shop__link.active:after {
@@ -8539,7 +8690,7 @@ input[type="time"] {
     background: #fff;
     will-change: transform;
     -webkit-overflow-scrolling: touch;
-    height: 85vh;
+    height: 80vh;
     overflow-x: hidden;
   }
 
@@ -8643,6 +8794,10 @@ input[type="time"] {
   .sidebar-item img {
     margin-right: 10px;
   }
+
+  .lk-inner-sidebar {
+    display: none;
+  }
 }
 
 @media (max-width: 768px) {
@@ -8731,7 +8886,12 @@ input[type="time"] {
   }
 
   .profile-details-name {
-    font-size: 23px;
+    font-size: 14px;
+    font-weight: 500;
+  }
+
+  .profile-data-item {
+    margin-bottom: 20px;
   }
 
   .radio-type span {
@@ -8795,6 +8955,10 @@ input[type="time"] {
     display: block;
     -webkit-animation: fadeIn 0.5s linear;
     animation: fadeIn 0.5s linear;
+  }
+
+  .lk-tabs-wrapper .lk-inner-table-container {
+    display: block;
   }
 
   .lk-table {
@@ -9189,6 +9353,78 @@ input[type="time"] {
   .lk-arrow-back {
     display: flex !important;
   }
+
+  .profile-details-photo {
+    max-width: 48px;
+    max-height: 48px;
+    min-width: 48px;
+    min-height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .profile-change-photo-icon {
+    position: static;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: translate(0%, 0%);
+  }
+
+  .profile-details-photo:hover .profile-change-photo-icon {
+    position: static;
+    transform: translate(0%, 0%);
+  }
+
+  .lk-order-arrow-back {
+    margin-top: 0;
+  }
+
+  .lk-inner-row {
+    flex-wrap: wrap;
+  }
+
+  .lk-tabs-wrapper h3 {
+    margin-bottom: 24px;
+  }
+
+  .lk-inner-card {
+    height: auto;
+    flex-wrap: wrap;
+    padding-bottom: 16px;
+  }
+
+  .lk-inner-card-image-wrap {
+    height: 70px;
+    width: 22%;
+    margin-bottom: 30px;
+    position: relative;
+    bottom: 7px;
+  }
+
+  .lk-text-wrapper {
+    max-width: 65%;
+    margin-bottom: 25px;
+  }
+
+  .lk-input-wrapper {
+    margin: 0 auto;
+  }
+
+  .lk-inner-card {
+    margin-bottom: 16px;
+  }
+
+  .lk-card-title {
+    margin-top: 5px;
+  }
+
+  .quantity-drop-down-wrapper {
+    width: 43px;
+  }
 }
 
 @media (max-width: 508px) {
@@ -9271,6 +9507,22 @@ input[type="time"] {
 
   .default-button {
     padding: 10px 5px;
+  }
+
+  .lk-submit-button {
+    padding: 10px 35px;
+  }
+
+  .profile-details-photo:hover .profile-change-photo-icon img {
+    width: 30px;
+  }
+
+  .radio-buttons-row .radio-type {
+    margin-right: 10px;
+  }
+
+  .radio-type span {
+    line-height: 20px;
   }
 }
 

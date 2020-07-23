@@ -1041,6 +1041,7 @@ main {
   padding-left: 28px;
   font-size: 16px;
   line-height: 24px;
+  transition: 0.3s linear all;
 }
 .submit-form{
   cursor: pointer;
@@ -2084,3 +2085,112 @@ main {
   display: none !important;
   cursor: pointer;
 }
+.lk-order-arrow-back{
+  display: flex !important;
+  margin-top: 40px;
+  margin-bottom: 20px;
+  cursor: pointer;
+  width: max-content;
+}
+.lk-order-arrow-back span{
+  transition: .3s linear all;
+}
+.lk-order-arrow-back:hover span{
+  color: #CC2830;
+}
+.lk-inner-row .small-title:first-child{
+  margin-right: 35px;
+}
+.lk-inner-card{
+  border: 1px solid #E2E2E2;
+  height: 112px;
+  align-items: center;
+  margin-bottom: 20px;
+}
+.lk-input-wrapper input{
+  border: 2px solid rgba(0, 0, 0, 0.54);
+  width: 48px;
+  height: 29px;
+  text-align: center;
+  outline: none;
+  background-color: transparent;
+}
+.lk-card-title{
+  max-width: 460px;
+  height: 55px;
+  margin-bottom: 5px;
+}
+.lk-text-wrapper {
+  margin-right: 15px;
+}
+.lk-card-link{
+  font-size: 14px;
+  line-height: 24px;
+  text-decoration-line: underline;
+  color: #CC2830;
+  opacity: 0.54;
+  transition: 0.3s linear all;
+}
+.lk-card-link:hover{
+  opacity: 1;
+}
+.lk-card-cost{
+  margin: 0 auto;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 24px;
+  color: #202020;
+}
+.lk-inner-card-image-wrap{
+  margin-right: 20px;
+}
+.lk-inner-card:last-child{
+  margin-bottom: 60px;
+}
+.lk-inner-card-image-wrap{
+  height: 108px;
+  img{
+    max-width: 100%;
+    max-height: 100%;
+  }
+}
+
+.lk-inner-table-container{
+  display: block;
+}
+.lk-order-arrow-back svg{
+  margin-right: 10px;
+  transition: 0.3s linear all;
+}
+.lk-order-arrow-back:hover svg{
+  margin-right: 15px;
+}
+.header-burger.open:after{
+  content: '';
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  background-color: rgba(0, 0, 0, .15);
+}
+.mobile-social-links{
+  display: none;
+}
+.brand-product .fixing-inner-child-content{
+  padding-left: 0;
+}
+.brand-product .fixing-type-for-device-row{
+  padding-bottom: 40px;
+}
+
+
+
+
+
+
+
+
