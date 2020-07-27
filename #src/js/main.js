@@ -1,71 +1,88 @@
-if (screen.width > 991) {
-    let comSwiperFirst = new Swiper('.commodity-1 .swiper-container', {
-        loop: true,
-        spaceBetween: 24,
-        pagination: {
-            el: '.commodity-pagination-1',
-            clickable: true,
-        },
-        slidesPerView: 4,
-    })
-    let comSwiperSecond = new Swiper('.commodity-2 .swiper-container', {
-        loop: true,
-        spaceBetween: 24,
-        pagination: {
-            el: '.commodity-pagination-2',
-            clickable: true,
-        },
-        slidesPerView: 4,
-    })
-    comSwiperSecond.on('slideChange', function () {
-        Array.from(allCards).forEach(cardDrop => {
-            cardDrop.closeDrop()
-        });
+let comSwiperFirst = new Swiper('.commodity-1 .swiper-container', {
+    loop: true,
+    spaceBetween: 24,
+    pagination: {
+        el: '.commodity-pagination-1',
+        clickable: true,
+    },
+    slidesPerView: 4,
+});
+let comSwiperSecond = new Swiper('.commodity-2 .swiper-container', {
+    loop: true,
+    spaceBetween: 24,
+    pagination: {
+        el: '.commodity-pagination-2',
+        clickable: true,
+    },
+    slidesPerView: 4,
+});
+comSwiperSecond.on('slideChange', function () {
+    Array.from(allCards).forEach(cardDrop => {
+        cardDrop.closeDrop()
     });
-    comSwiperFirst.on('slideChange', function () {
-        Array.from(allCards).forEach(cardDrop => {
-            cardDrop.closeDrop()
-        });
+});
+comSwiperFirst.on('slideChange', function () {
+    Array.from(allCards).forEach(cardDrop => {
+        cardDrop.closeDrop()
     });
-}
-if (screen.width < 991) {
-    let dropDown = document.querySelector('.language-selection-drop-down');
-    let headerNavigationWrapper = document.querySelector('.header_navigation_wrapper');
-    let newLi = document.createElement('li')
-    newLi.classList.add('language-wrapper');
-    newLi.append(dropDown)
-    headerNavigationWrapper.prepend(newLi);
-    let menuBurger = new Burger(
-        '.search_form_submit',
-        '.header_form_search'
-    )
-    let closeFormSearch = document.querySelector('.close_form_search');
-    closeFormSearch.addEventListener('click', menuBurger.closeBurger)
-    let shopDropDownLis = document.querySelectorAll('shop__drop__down-tabs-side-container ul > li')
-    Array.from(shopDropDownLis).forEach(el => {
-        el.classList.remove('active');
-    })
-}
-if (screen.width < 767) {
-    try {
-        let lkTabsWrapper = document.getElementsByClassName('lk-tabs-wrapper')[0];
-        Array.from(lkTabsWrapper.children).forEach(child => {
-            child.classList.remove('active')
+});
+function mediaQueries() {
+    if (window.innerWidth <= 991) {
+        let dropDown = document.querySelector('.language-selection-drop-down');
+        let headerNavigationWrapper = document.querySelector('.header_navigation_wrapper');
+        let newLi = document.createElement('li')
+        newLi.classList.add('language-wrapper');
+        newLi.append(dropDown)
+        headerNavigationWrapper.prepend(newLi);
+        let menuBurger = new Burger(
+            '.search_form_submit',
+            '.header_form_search'
+        )
+        let closeFormSearch = document.querySelector('.close_form_search');
+        closeFormSearch.addEventListener('click', menuBurger.closeBurger)
+        let shopDropDownLis = document.querySelectorAll('shop__drop__down-tabs-side-container ul > li')
+        Array.from(shopDropDownLis).forEach(el => {
+            el.classList.remove('active');
         })
-        let tabsChanger = document.getElementsByClassName('lk-tabs-changer');
-        Array.from(tabsChanger).forEach(changer => {
-            changer.classList.remove('active')
-        })
+    }
+    if (window.innerWidth <= 767) {
+        try {
+            let lkTabsWrapper = document.getElementsByClassName('lk-tabs-wrapper')[0];
+            Array.from(lkTabsWrapper.children).forEach(child => {
+                child.classList.remove('active')
+            })
+            let tabsChanger = document.getElementsByClassName('lk-tabs-changer');
+            Array.from(tabsChanger).forEach(changer => {
+                changer.classList.remove('active')
+            })
 
-    } catch (e) {
-        void e
+        } catch (e) {
+            void e
+        }
     }
 }
+mediaQueries();
 
+let windowWith = window.innerWidth;
+function reloadPage() {
+    console.log(windowWith)
+    if(windowWith > 991) {
+        console.log('more than 991')
+        if(window.innerWidth < 992) {
+            console.log('reload page')
+            window.location.href = window.location;
+        }
+    } else {
+        if(window.innerWidth > 991) {
+            window.location.href = window.location;
+        }
+    }
+}
+window.addEventListener('resize', reloadPage);
 function DropDown(parent, trigger, changers) {
     try {
 
-        if(typeof parent == "string"){
+        if (typeof parent == "string") {
             this.parent = document.getElementsByClassName(parent)[0]
             this.trigger = this.parent.getElementsByClassName(trigger)[0]
             this.changers = this.parent.getElementsByClassName(changers)
@@ -105,7 +122,7 @@ function DropDown(parent, trigger, changers) {
                     void e
                 }
             })
-            if(isClosing){
+            if (isClosing) {
                 self.trigger.nextElementSibling.classList.remove('active')
             }
         }
@@ -156,6 +173,9 @@ function Burger(burger, menu, parentElement = {}) {
                 if (e.target.hasAttribute('data-burger')) {
 
                 } else {
+                    document.body.classList.remove('overflow-js');
+                }
+                if (e.target.classList.contains('header-burger') || e.target.classList.contains('market-filtering-trigger')) {
                     document.body.classList.remove('overflow-js');
                 }
             }
@@ -211,6 +231,11 @@ function makeCommodityActive(commodityWrapper) {
 
 function Tabs(tabTrigger, tabContentWrapper, parentElement, closeButtonSelectorName,
               overflowingElement) {
+    let changeEvent = 'mouseover';
+    if(window.innerWidth < 992){
+        changeEvent = 'click'
+    }
+    console.log(changeEvent)
     try {
         this.tab = tabTrigger
         this.tabContent = tabContentWrapper
@@ -223,7 +248,7 @@ function Tabs(tabTrigger, tabContentWrapper, parentElement, closeButtonSelectorN
         let self = this;
 
         Array.from(this.tab).forEach(tab => {
-            tab.addEventListener('mouseover', changeTheTab)
+            tab.addEventListener(changeEvent, changeTheTab)
         })
 
         this.closeButtons.forEach(el => {
@@ -416,7 +441,6 @@ function ProgramTabs(tabTrigger, tabContentWrapper, parentElement, closeButtonSe
 }
 
 
-
 let headerLangDropDownParent = 'language-selection-drop-down';
 let headerLangDropTrigger = 'language-selected-text';
 let changers = 'language-selected-text-inner';
@@ -474,35 +498,56 @@ try {
 } catch (e) {
     void e
 }
-let costSliderElement = document.getElementById('cost_slider');
-let costSlider = noUiSlider.create(costSliderElement, {
-    start: [costSliderElement.getAttribute('data-min'),
-        costSliderElement.getAttribute('data-max')
-    ],
-    connect: true,
-    range: {
-        'min': +(costSliderElement.getAttribute('data-min')),
-        'max': +(costSliderElement.getAttribute('data-max'))
-    }
-});
-costSlider.on('update', function(values) {
-    console.log(values);
-    let startingValue = +values[0];
-    let endingValue = +values[1];
-    let startingValueInput = document.getElementsByClassName('starting-value')[0];
-    let endingValueInput = document.getElementsByClassName('ending-value')[0];
-    startingValueInput.value = +(startingValue).toFixed();
-    endingValueInput.value = +(endingValue).toFixed();
-});
-
-let sortingDropDown = document.getElementsByClassName('drop-down-sorting');
-Array.from(sortingDropDown).forEach(el => {
-    new DropDown(
-        el,
-        el.querySelector('.sorting-filter-trigger'),
-        el.querySelectorAll('sorting-filter-content-changers')
-    )
-})
-
+try {
+    let costSliderElement = document.getElementById('cost_slider');
+    let costSlider = noUiSlider.create(costSliderElement, {
+        start: [costSliderElement.getAttribute('data-min'),
+            costSliderElement.getAttribute('data-max')
+        ],
+        connect: true,
+        range: {
+            'min': +(costSliderElement.getAttribute('data-min')),
+            'max': +(costSliderElement.getAttribute('data-max'))
+        }
+    });
+    costSlider.on('update', function (values) {
+        console.log(values);
+        let startingValue = +values[0];
+        let endingValue = +values[1];
+        let startingValueInput = document.getElementsByClassName('starting-value')[0];
+        let endingValueInput = document.getElementsByClassName('ending-value')[0];
+        startingValueInput.value = +(startingValue).toFixed();
+        endingValueInput.value = +(endingValue).toFixed();
+    });
+} catch (e) {
+    void e
+}
+try {
+    let sortingDropDown = document.getElementsByClassName('drop-down-sorting');
+    Array.from(sortingDropDown).forEach(el => {
+        new DropDown(
+            el,
+            el.querySelector('.sorting-filter-trigger'),
+            el.querySelectorAll('sorting-filter-content-changers')
+        )
+    })
+} catch (e) {
+    void e
+}
 new Collapser('market-sorting-trigger', 'sorting-controller', '.collapsing-control');
 new Collapser('cost-filter-trigger', 'filter-content', '.filter-el');
+
+let dataMediaLinks = document.querySelectorAll('[data-media-link]');
+Array.from(dataMediaLinks).forEach(medialink => {
+    medialink.addEventListener('click', changeTheLink)
+})
+function changeTheLink() {
+    if(window.innerWidth < 991) {
+        document.location.href = this.getAttribute('data-media-link')
+    }
+}
+let filteringBurger = new Burger(
+    '.market-filtering-trigger',
+    '.shop-sidebar'
+)
+

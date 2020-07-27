@@ -4,230 +4,251 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-3 shop-sidebar login-content sidebar">
-                    <form class="sidebar-search">
-                        <label class="position-relative">
-                            <input type="text" placeholder="Поиск" class="auth_control">
-                            <button type="button" class="search_form_submit">
-                                <img src="img/common/search.svg" alt="">
-                            </button>
-                        </label>
-                    </form>
 
-                    <div class="cost-filter filter-el">
-                        <div class="cost-filter-trigger justify-content-between d-flex align-items-center">
-                            <p>
-                                цена €
-                            </p>
-                            <img src="img/common/chevron-down.svg" alt="">
-                        </div>
-                        <div class="filter-content">
-                            <div class="cost-slider">
-                                <div data-min="0" data-max="100" id="cost_slider"></div>
+                    <div class="shop-sidebar-wrapper">
+
+                        <div class="shop-sidebar-inner-wrap">
+
+                            <div class="cancel-filters">
+                                <span>Отменить все</span>
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                     xmlns="http://www.w3.org/2000/svg">
+                                    <g opacity="0.54">
+                                        <path d="M19 6.41L17.59 5L12 10.59L6.41 5L5 6.41L10.59 12L5 17.59L6.41 19L12 13.41L17.59 19L19 17.59L13.41 12L19 6.41Z"
+                                              fill="#CC2830"/>
+                                    </g>
+                                </svg>
                             </div>
 
-                            <div class="d-flex justify-content-between align-items-center range-inputs-wrapper">
-                                <label class="d-flex align-items-center">
+                            <form class="sidebar-search">
+                                <label class="position-relative">
+                                    <input type="text" placeholder="Поиск" class="auth_control">
+                                    <button type="button" class="search_form_submit">
+                                        <img src="img/common/search.svg" alt="">
+                                    </button>
+                                </label>
+                            </form>
+
+                            <div class="cost-filter filter-el">
+                                <div class="cost-filter-trigger justify-content-between d-flex align-items-center">
+                                    <p>
+                                        цена €
+                                    </p>
+                                    <img src="img/common/chevron-down.svg" alt="">
+                                </div>
+                                <div class="filter-content">
+                                    <div class="cost-slider">
+                                        <div data-min="0" data-max="100" id="cost_slider"></div>
+                                    </div>
+
+                                    <div class="d-flex justify-content-between align-items-center range-inputs-wrapper">
+                                        <label class="d-flex align-items-center">
                                 <span>
                                     От
                                 </span>
-                                    <input class="starting-value" placeholder="0" type="text">
-                                </label>
-                                <label class="d-flex align-items-center">
+                                            <input class="starting-value" placeholder="0" type="text">
+                                        </label>
+                                        <label class="d-flex align-items-center">
                                 <span>
                                     До
                                 </span>
-                                    <input class="ending-value" placeholder="300" type="text">
-                                </label>
+                                            <input class="ending-value" placeholder="300" type="text">
+                                        </label>
+                                    </div>
+
+                                </div>
                             </div>
 
-                        </div>
-                    </div>
-
-                    <div class="filter-el checkbox-filter">
-                        <div class="cost-filter-trigger justify-content-between d-flex align-items-center">
-                            <p>
-                                наличие
-                            </p>
-                            <img src="img/common/chevron-down.svg" alt="">
-                        </div>
-                        <div class="filter-content">
-                            <label class="checkbox-label">
-                                <input type="checkbox" name="agreement">
-                                <span>
+                            <div class="filter-el checkbox-filter">
+                                <div class="cost-filter-trigger justify-content-between d-flex align-items-center">
+                                    <p>
+                                        наличие
+                                    </p>
+                                    <img src="img/common/chevron-down.svg" alt="">
+                                </div>
+                                <div class="filter-content">
+                                    <label class="checkbox-label">
+                                        <input type="checkbox" name="agreement">
+                                        <span>
                                     Есть в наличии
                                 </span>
-                            </label>
-                            <label class="checkbox-label">
-                                <input type="checkbox" name="agreement">
-                                <span>
+                                    </label>
+                                    <label class="checkbox-label">
+                                        <input type="checkbox" name="agreement">
+                                        <span>
                                    Под заказ
                                 </span>
-                            </label>
-                        </div>
-                    </div>
+                                    </label>
+                                </div>
+                            </div>
 
-                    <div class="filter-el checkbox-filter">
-                        <div class="cost-filter-trigger justify-content-between d-flex align-items-center">
-                            <p>
-                                устройство
-                            </p>
-                            <img src="img/common/chevron-down.svg" alt="">
-                        </div>
-                        <div class="filter-content">
-                            <label class="checkbox-label">
-                                <input type="checkbox" name="agreement">
-                                <span>
+                            <div class="filter-el checkbox-filter">
+                                <div class="cost-filter-trigger justify-content-between d-flex align-items-center">
+                                    <p>
+                                        устройство
+                                    </p>
+                                    <img src="img/common/chevron-down.svg" alt="">
+                                </div>
+                                <div class="filter-content">
+                                    <label class="checkbox-label">
+                                        <input type="checkbox" name="agreement">
+                                        <span>
                                    Телефоны
                                 </span>
-                            </label>
-                            <label class="checkbox-label">
-                                <input type="checkbox" name="agreement">
-                                <span>
+                                    </label>
+                                    <label class="checkbox-label">
+                                        <input type="checkbox" name="agreement">
+                                        <span>
                                    Планшеты
                                 </span>
-                            </label>
-                            <label class="checkbox-label">
-                                <input type="checkbox" name="agreement">
-                                <span>
+                                    </label>
+                                    <label class="checkbox-label">
+                                        <input type="checkbox" name="agreement">
+                                        <span>
                                    Ноутбуки
                                 </span>
-                            </label>
-                        </div>
-                    </div>
+                                    </label>
+                                </div>
+                            </div>
 
-                    <div class="filter-el checkbox-filter">
-                        <div class="cost-filter-trigger justify-content-between d-flex align-items-center">
-                            <p>
-                                марка
-                            </p>
-                            <img src="img/common/chevron-down.svg" alt="">
-                        </div>
-                        <div class="filter-content">
-                            <label class="checkbox-label">
-                                <input type="checkbox" name="agreement">
-                                <span>
+                            <div class="filter-el checkbox-filter">
+                                <div class="cost-filter-trigger justify-content-between d-flex align-items-center">
+                                    <p>
+                                        марка
+                                    </p>
+                                    <img src="img/common/chevron-down.svg" alt="">
+                                </div>
+                                <div class="filter-content">
+                                    <label class="checkbox-label">
+                                        <input type="checkbox" name="agreement">
+                                        <span>
                                    Apple
                                 </span>
-                            </label>
-                            <label class="checkbox-label">
-                                <input type="checkbox" name="agreement">
-                                <span>
+                                    </label>
+                                    <label class="checkbox-label">
+                                        <input type="checkbox" name="agreement">
+                                        <span>
                                    Samsung
                                 </span>
-                            </label>
-                        </div>
-                    </div>
+                                    </label>
+                                </div>
+                            </div>
 
-                    <div class="filter-el checkbox-filter">
-                        <div class="cost-filter-trigger justify-content-between d-flex align-items-center">
-                            <p>
-                                модель
-                            </p>
-                            <img src="img/common/chevron-down.svg" alt="">
-                        </div>
-                        <div class="filter-content">
-                            <label class="checkbox-label">
-                                <input type="checkbox" name="agreement">
-                                <span>
+                            <div class="filter-el checkbox-filter">
+                                <div class="cost-filter-trigger justify-content-between d-flex align-items-center">
+                                    <p>
+                                        модель
+                                    </p>
+                                    <img src="img/common/chevron-down.svg" alt="">
+                                </div>
+                                <div class="filter-content">
+                                    <label class="checkbox-label">
+                                        <input type="checkbox" name="agreement">
+                                        <span>
                                   iPhone 5
 
                                 </span>
-                            </label>
-                            <label class="checkbox-label">
-                                <input type="checkbox" name="agreement">
-                                <span>
+                                    </label>
+                                    <label class="checkbox-label">
+                                        <input type="checkbox" name="agreement">
+                                        <span>
                                    iPhone 5s
                                 </span>
-                            </label>
+                                    </label>
 
-                            <label class="checkbox-label">
-                                <input type="checkbox" name="agreement">
-                                <span>
+                                    <label class="checkbox-label">
+                                        <input type="checkbox" name="agreement">
+                                        <span>
                                    iPhone 6
                                 </span>
-                            </label>
+                                    </label>
 
-                            <label class="checkbox-label">
-                                <input type="checkbox" name="agreement">
-                                <span>
+                                    <label class="checkbox-label">
+                                        <input type="checkbox" name="agreement">
+                                        <span>
                                    iPhone 6s
                                 </span>
-                            </label>
+                                    </label>
 
-                            <label class="checkbox-label">
-                                <input type="checkbox" name="agreement">
-                                <span>
+                                    <label class="checkbox-label">
+                                        <input type="checkbox" name="agreement">
+                                        <span>
                                    iPhone 6 Plus
                                 </span>
-                            </label>
+                                    </label>
 
-                            <label class="checkbox-label">
-                                <input type="checkbox" name="agreement">
-                                <span>
+                                    <label class="checkbox-label">
+                                        <input type="checkbox" name="agreement">
+                                        <span>
                                    iPhone 6S
                                 </span>
-                            </label>
+                                    </label>
 
-                            <label class="checkbox-label">
-                                <input type="checkbox" name="agreement">
-                                <span>
+                                    <label class="checkbox-label">
+                                        <input type="checkbox" name="agreement">
+                                        <span>
                                    iPhone 6S Plus
                                 </span>
-                            </label>
+                                    </label>
 
-                            <label class="checkbox-label">
-                                <input type="checkbox" name="agreement">
-                                <span>
+                                    <label class="checkbox-label">
+                                        <input type="checkbox" name="agreement">
+                                        <span>
                                    iPhone 7
                                 </span>
-                            </label>
+                                    </label>
 
-                            <label class="checkbox-label">
-                                <input type="checkbox" name="agreement">
-                                <span>
+                                    <label class="checkbox-label">
+                                        <input type="checkbox" name="agreement">
+                                        <span>
                                    iPhone 8
                                 </span>
-                            </label>
+                                    </label>
 
-                            <label class="checkbox-label">
-                                <input type="checkbox" name="agreement">
-                                <span>
+                                    <label class="checkbox-label">
+                                        <input type="checkbox" name="agreement">
+                                        <span>
                                    iPhone 10
                                 </span>
-                            </label>
+                                    </label>
 
-                            <label class="checkbox-label">
-                                <input type="checkbox" name="agreement">
-                                <span>
+                                    <label class="checkbox-label">
+                                        <input type="checkbox" name="agreement">
+                                        <span>
                                    iPhone 11
                                 </span>
-                            </label>
+                                    </label>
 
-                        </div>
-                    </div>
+                                </div>
+                            </div>
 
-                    <div class="filter-el checkbox-filter">
-                        <div class="cost-filter-trigger justify-content-between d-flex align-items-center">
-                            <p>
-                                цвет
-                            </p>
-                            <img src="img/common/chevron-down.svg" alt="">
-                        </div>
-                        <div class="filter-content">
-                            <label class="checkbox-label">
-                                <input type="checkbox" name="agreement">
-                                <span>
+                            <div class="filter-el checkbox-filter">
+                                <div class="cost-filter-trigger justify-content-between d-flex align-items-center">
+                                    <p>
+                                        цвет
+                                    </p>
+                                    <img src="img/common/chevron-down.svg" alt="">
+                                </div>
+                                <div class="filter-content">
+                                    <label class="checkbox-label">
+                                        <input type="checkbox" name="agreement">
+                                        <span>
                                    Белый
                                 </span>
-                            </label>
-                            <label class="checkbox-label">
-                                <input type="checkbox" name="agreement">
-                                <span>
+                                    </label>
+                                    <label class="checkbox-label">
+                                        <input type="checkbox" name="agreement">
+                                        <span>
                                    Чёрный
                                 </span>
-                            </label>
+                                    </label>
+                                </div>
+                            </div>
+
                         </div>
+
                     </div>
+
                 </div>
 
                 <div class="col-lg-9 col-md-12">
@@ -261,6 +282,20 @@
                                                 </defs>
                                             </svg>
                                             <span>Сортировать</span>
+                                        </a>
+                                        <a href="#" class="market-sorting-trigger market-filtering-trigger">
+                                            <svg width="24" height="24" viewBox="0 0 24 24"
+                                                 xmlns="http://www.w3.org/2000/svg">
+                                                <g clip-path="url(#clip0)">
+                                                    <path d="M3 17H9V15H3V17ZM3 5V7H21V5H3ZM3 12H15V10H3V12Z"/>
+                                                </g>
+                                                <defs>
+                                                    <clipPath id="clip0">
+                                                        <rect width="24" height="24" fill="white"/>
+                                                    </clipPath>
+                                                </defs>
+                                            </svg>
+                                            <span>Фильтры</span>
                                         </a>
                                         <a href="#" class="market-make-list">
                                             <svg width="24" height="24" viewBox="0 0 24 24"
@@ -339,7 +374,7 @@
                         </h3>
 
                         <div class="row additional-commodities-wrapper">
-                            <div class="col-lg-4">
+                            <div class="col-lg-4 col-md-4 col-6">
                                 <div class="commodity-default-card">
                                     <div class="commodity-image-wrapper">
                                         <img src="img/common/card.png" alt="">
@@ -372,7 +407,8 @@
                                                         </label>
                                                     </div>
                                                     <div class="quantity-trigger-wrapper">
-                                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                                             xmlns="http://www.w3.org/2000/svg">
                                                             <g opacity="0.54">
                                                                 <path d="M7 10L12 15L17 10H7Z" fill="#202020"></path>
                                                             </g>
@@ -390,7 +426,7 @@
 
                                 </div>
                             </div>
-                            <div class="col-lg-4">
+                            <div class="col-lg-4 col-md-4 col-6">
                                 <div class="commodity-default-card">
                                     <div class="commodity-image-wrapper">
                                         <img src="img/common/card.png" alt="">
@@ -423,7 +459,8 @@
                                                         </label>
                                                     </div>
                                                     <div class="quantity-trigger-wrapper">
-                                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                                             xmlns="http://www.w3.org/2000/svg">
                                                             <g opacity="0.54">
                                                                 <path d="M7 10L12 15L17 10H7Z" fill="#202020"></path>
                                                             </g>
@@ -441,7 +478,7 @@
 
                                 </div>
                             </div>
-                            <div class="col-lg-4">
+                            <div class="col-lg-4 col-md-4 col-6">
                                 <div class="commodity-default-card">
                                     <div class="commodity-image-wrapper">
                                         <img src="img/common/card.png" alt="">
@@ -474,7 +511,8 @@
                                                         </label>
                                                     </div>
                                                     <div class="quantity-trigger-wrapper">
-                                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                                             xmlns="http://www.w3.org/2000/svg">
                                                             <g opacity="0.54">
                                                                 <path d="M7 10L12 15L17 10H7Z" fill="#202020"></path>
                                                             </g>
@@ -492,7 +530,7 @@
 
                                 </div>
                             </div>
-                            <div class="col-lg-4">
+                            <div class="col-lg-4 col-md-4 col-6">
                                 <div class="commodity-default-card">
                                     <div class="commodity-image-wrapper">
                                         <img src="img/common/card.png" alt="">
@@ -525,7 +563,8 @@
                                                         </label>
                                                     </div>
                                                     <div class="quantity-trigger-wrapper">
-                                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                                             xmlns="http://www.w3.org/2000/svg">
                                                             <g opacity="0.54">
                                                                 <path d="M7 10L12 15L17 10H7Z" fill="#202020"></path>
                                                             </g>
@@ -543,7 +582,7 @@
 
                                 </div>
                             </div>
-                            <div class="col-lg-4">
+                            <div class="col-lg-4 col-md-4 col-6">
                                 <div class="commodity-default-card">
                                     <div class="commodity-image-wrapper">
                                         <img src="img/common/card.png" alt="">
@@ -576,7 +615,8 @@
                                                         </label>
                                                     </div>
                                                     <div class="quantity-trigger-wrapper">
-                                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                                             xmlns="http://www.w3.org/2000/svg">
                                                             <g opacity="0.54">
                                                                 <path d="M7 10L12 15L17 10H7Z" fill="#202020"></path>
                                                             </g>
@@ -594,7 +634,7 @@
 
                                 </div>
                             </div>
-                            <div class="col-lg-4">
+                            <div class="col-lg-4 col-md-4 col-6">
                                 <div class="commodity-default-card">
                                     <div class="commodity-image-wrapper">
                                         <img src="img/common/card.png" alt="">
@@ -627,7 +667,8 @@
                                                         </label>
                                                     </div>
                                                     <div class="quantity-trigger-wrapper">
-                                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                                             xmlns="http://www.w3.org/2000/svg">
                                                             <g opacity="0.54">
                                                                 <path d="M7 10L12 15L17 10H7Z" fill="#202020"></path>
                                                             </g>
@@ -645,7 +686,7 @@
 
                                 </div>
                             </div>
-                            <div class="col-lg-4">
+                            <div class="col-lg-4 col-md-4 col-6">
                                 <div class="commodity-default-card">
                                     <div class="commodity-image-wrapper">
                                         <img src="img/common/card.png" alt="">
@@ -678,7 +719,8 @@
                                                         </label>
                                                     </div>
                                                     <div class="quantity-trigger-wrapper">
-                                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                                             xmlns="http://www.w3.org/2000/svg">
                                                             <g opacity="0.54">
                                                                 <path d="M7 10L12 15L17 10H7Z" fill="#202020"></path>
                                                             </g>
@@ -696,7 +738,7 @@
 
                                 </div>
                             </div>
-                            <div class="col-lg-4">
+                            <div class="col-lg-4 col-md-4 col-6">
                                 <div class="commodity-default-card">
                                     <div class="commodity-image-wrapper">
                                         <img src="img/common/card.png" alt="">
@@ -729,7 +771,8 @@
                                                         </label>
                                                     </div>
                                                     <div class="quantity-trigger-wrapper">
-                                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                                             xmlns="http://www.w3.org/2000/svg">
                                                             <g opacity="0.54">
                                                                 <path d="M7 10L12 15L17 10H7Z" fill="#202020"></path>
                                                             </g>
@@ -747,7 +790,7 @@
 
                                 </div>
                             </div>
-                            <div class="col-lg-4">
+                            <div class="col-lg-4 col-md-4 col-6">
                                 <div class="commodity-default-card">
                                     <div class="commodity-image-wrapper">
                                         <img src="img/common/card.png" alt="">
@@ -780,7 +823,8 @@
                                                         </label>
                                                     </div>
                                                     <div class="quantity-trigger-wrapper">
-                                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                                             xmlns="http://www.w3.org/2000/svg">
                                                             <g opacity="0.54">
                                                                 <path d="M7 10L12 15L17 10H7Z" fill="#202020"></path>
                                                             </g>
@@ -798,7 +842,7 @@
 
                                 </div>
                             </div>
-                            <div class="col-lg-4">
+                            <div class="col-lg-4 col-md-4 col-6">
                                 <div class="commodity-default-card">
                                     <div class="commodity-image-wrapper">
                                         <img src="img/common/card.png" alt="">
@@ -831,7 +875,8 @@
                                                         </label>
                                                     </div>
                                                     <div class="quantity-trigger-wrapper">
-                                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                                             xmlns="http://www.w3.org/2000/svg">
                                                             <g opacity="0.54">
                                                                 <path d="M7 10L12 15L17 10H7Z" fill="#202020"></path>
                                                             </g>
@@ -849,7 +894,7 @@
 
                                 </div>
                             </div>
-                            <div class="col-lg-4">
+                            <div class="col-lg-4 col-md-4 col-6">
                                 <div class="commodity-default-card">
                                     <div class="commodity-image-wrapper">
                                         <img src="img/common/card.png" alt="">
@@ -882,7 +927,8 @@
                                                         </label>
                                                     </div>
                                                     <div class="quantity-trigger-wrapper">
-                                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                                             xmlns="http://www.w3.org/2000/svg">
                                                             <g opacity="0.54">
                                                                 <path d="M7 10L12 15L17 10H7Z" fill="#202020"></path>
                                                             </g>
@@ -900,7 +946,7 @@
 
                                 </div>
                             </div>
-                            <div class="col-lg-4">
+                            <div class="col-lg-4 col-md-4 col-6">
                                 <div class="commodity-default-card">
                                     <div class="commodity-image-wrapper">
                                         <img src="img/common/card.png" alt="">
@@ -933,7 +979,8 @@
                                                         </label>
                                                     </div>
                                                     <div class="quantity-trigger-wrapper">
-                                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                                             xmlns="http://www.w3.org/2000/svg">
                                                             <g opacity="0.54">
                                                                 <path d="M7 10L12 15L17 10H7Z" fill="#202020"></path>
                                                             </g>
@@ -951,7 +998,7 @@
 
                                 </div>
                             </div>
-                            <div class="col-lg-4">
+                            <div class="col-lg-4 col-md-4 col-6">
                                 <div class="commodity-default-card">
                                     <div class="commodity-image-wrapper">
                                         <img src="img/common/card.png" alt="">
@@ -984,7 +1031,8 @@
                                                         </label>
                                                     </div>
                                                     <div class="quantity-trigger-wrapper">
-                                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                                             xmlns="http://www.w3.org/2000/svg">
                                                             <g opacity="0.54">
                                                                 <path d="M7 10L12 15L17 10H7Z" fill="#202020"></path>
                                                             </g>
@@ -1002,7 +1050,7 @@
 
                                 </div>
                             </div>
-                            <div class="col-lg-4">
+                            <div class="col-lg-4 col-md-4 col-6">
                                 <div class="commodity-default-card">
                                     <div class="commodity-image-wrapper">
                                         <img src="img/common/card.png" alt="">
@@ -1035,7 +1083,8 @@
                                                         </label>
                                                     </div>
                                                     <div class="quantity-trigger-wrapper">
-                                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                                             xmlns="http://www.w3.org/2000/svg">
                                                             <g opacity="0.54">
                                                                 <path d="M7 10L12 15L17 10H7Z" fill="#202020"></path>
                                                             </g>
@@ -1050,7 +1099,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-lg-4">
+                            <div class="col-lg-4 col-md-4 col-6">
                                 <div class="commodity-default-card">
                                     <div class="commodity-image-wrapper">
                                         <img src="img/common/card.png" alt="">
@@ -1083,7 +1132,8 @@
                                                         </label>
                                                     </div>
                                                     <div class="quantity-trigger-wrapper">
-                                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                                             xmlns="http://www.w3.org/2000/svg">
                                                             <g opacity="0.54">
                                                                 <path d="M7 10L12 15L17 10H7Z" fill="#202020"></path>
                                                             </g>
@@ -1098,7 +1148,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-lg-4">
+                            <div class="col-lg-4 col-md-4 col-6">
                                 <div class="commodity-default-card">
                                     <div class="commodity-image-wrapper">
                                         <img src="img/common/card.png" alt="">
@@ -1131,7 +1181,8 @@
                                                         </label>
                                                     </div>
                                                     <div class="quantity-trigger-wrapper">
-                                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                                             xmlns="http://www.w3.org/2000/svg">
                                                             <g opacity="0.54">
                                                                 <path d="M7 10L12 15L17 10H7Z" fill="#202020"></path>
                                                             </g>
@@ -1149,7 +1200,7 @@
 
                                 </div>
                             </div>
-                            <div class="col-lg-4">
+                            <div class="col-lg-4 col-md-4 col-6">
                                 <div class="commodity-default-card">
                                     <div class="commodity-image-wrapper">
                                         <img src="img/common/card.png" alt="">
@@ -1182,7 +1233,8 @@
                                                         </label>
                                                     </div>
                                                     <div class="quantity-trigger-wrapper">
-                                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                                             xmlns="http://www.w3.org/2000/svg">
                                                             <g opacity="0.54">
                                                                 <path d="M7 10L12 15L17 10H7Z" fill="#202020"></path>
                                                             </g>
@@ -1197,7 +1249,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-lg-4">
+                            <div class="col-lg-4 col-md-4 col-6">
                                 <div class="commodity-default-card">
                                     <div class="commodity-image-wrapper">
                                         <img src="img/common/card.png" alt="">
@@ -1230,7 +1282,8 @@
                                                         </label>
                                                     </div>
                                                     <div class="quantity-trigger-wrapper">
-                                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                                             xmlns="http://www.w3.org/2000/svg">
                                                             <g opacity="0.54">
                                                                 <path d="M7 10L12 15L17 10H7Z" fill="#202020"></path>
                                                             </g>
