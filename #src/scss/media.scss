@@ -24,6 +24,10 @@
   .commodity-card-body .default-button{
     padding: 10px 8px;
   }
+  .commodity-default-card-list .commodity-card-title{
+    max-width: 220px;
+    margin-right: 40px;
+  }
 }
 
 @media (max-width: 991px) {
@@ -712,6 +716,19 @@
     position: relative;
     top: 16px;
   }
+  .commodity-default-card-list .default-button{
+    width: 36px;
+  }
+  .commodity-default-card-list .commodity-card-title{
+    font-size: 13px;
+  }
+  .commodity-default-card-list .commodity-list-buttons{
+    margin: auto;
+  }
+  .commodity-list-characters .commodity-card-parameter{
+    margin-bottom: 5px;
+  }
+
 }
 
 @media (max-width: 767px) {
@@ -1213,6 +1230,22 @@
     .footer-item:nth-child(1){
       margin-right: 40px;
     }
+  }
+  .commodity-default-card-list{
+    flex-wrap: wrap;
+    padding: 15px;
+  }
+  .commodity-default-card-list .commodity-card-title{
+    margin-right: 0;
+  }
+  .commodity-list-characters .commodity-card-parameter {
+    margin-bottom: 15px;
+  }
+  .commodity-default-card-list .commodity-list-buttons {
+    margin: auto auto 10px auto;
+  }
+  .commodity-default-card-list .commodity-list-characters{
+    margin-top: 15px;
   }
 
 

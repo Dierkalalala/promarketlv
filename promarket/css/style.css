@@ -5422,6 +5422,59 @@ input[type="time"] {
   display: none;
 }
 
+.commodity-default-card-list {
+  padding: 15px 0;
+  transition: 0.3s linear all;
+  align-items: flex-start;
+}
+
+.commodity-default-card-list .commodity-image-wrapper {
+  height: auto;
+  width: auto;
+}
+
+.commodity-default-card-list .commodity-image-wrapper img {
+  width: 80px;
+}
+
+.commodity-default-card-list .commodity-card-title {
+  max-width: 350px;
+  margin-right: 50px;
+}
+
+.commodity-default-card-list .default-button {
+  background-image: url(../img/common/shopping-cart.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 36px;
+  height: 36px;
+  max-width: 36px;
+  max-height: 36px;
+  box-sizing: border-box;
+  padding: 0;
+  background-size: 22px;
+}
+
+.commodity-default-card-list .default-button:hover {
+  background-color: transparent;
+}
+
+.commodity-default-card-list .commodity-list-characters {
+  margin-right: 60px;
+}
+
+.commodity-default-card-list .commodity-card-additional-price {
+  margin-bottom: 0;
+}
+
+.commodity-default-card-list .commodity-list-buttons {
+  margin: auto 0;
+}
+
+.commodity-default-card-list .default-button {
+  margin-left: 12px;
+}
+
 @media only screen and (min-width: 35em) {
   /* Style adjustments for viewports that meet the condition */
 }
@@ -8774,6 +8827,11 @@ input[type="time"] {
   .commodity-card-body .default-button {
     padding: 10px 8px;
   }
+
+  .commodity-default-card-list .commodity-card-title {
+    max-width: 220px;
+    margin-right: 40px;
+  }
 }
 
 @media (max-width: 992px) {
@@ -9587,6 +9645,22 @@ input[type="time"] {
     position: relative;
     top: 16px;
   }
+
+  .commodity-default-card-list .default-button {
+    width: 36px;
+  }
+
+  .commodity-default-card-list .commodity-card-title {
+    font-size: 13px;
+  }
+
+  .commodity-default-card-list .commodity-list-buttons {
+    margin: auto;
+  }
+
+  .commodity-list-characters .commodity-card-parameter {
+    margin-bottom: 5px;
+  }
 }
 
 @media (max-width: 768px) {
@@ -10253,6 +10327,27 @@ input[type="time"] {
 
   .footer-items-wrapper .footer-item:nth-child(1) {
     margin-right: 40px;
+  }
+
+  .commodity-default-card-list {
+    flex-wrap: wrap;
+    padding: 15px;
+  }
+
+  .commodity-default-card-list .commodity-card-title {
+    margin-right: 0;
+  }
+
+  .commodity-list-characters .commodity-card-parameter {
+    margin-bottom: 15px;
+  }
+
+  .commodity-default-card-list .commodity-list-buttons {
+    margin: auto auto 10px auto;
+  }
+
+  .commodity-default-card-list .commodity-list-characters {
+    margin-top: 15px;
   }
 }
 
