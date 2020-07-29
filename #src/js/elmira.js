@@ -11,32 +11,13 @@ if (screen.width < 768) {
 }
 //не работает.
 
-let quantityDropDownParent = 'quantity-selection-drop-down';
-let quantityDropTrigger = 'quantity-selected-text';
-let quantitychangers = 'quantity-selected-text-inner';
-let quantityDropDown = new DropDown(
-    quantityDropDownParent,
-    quantityDropTrigger,
-    quantitychangers
+new DropDown(
+    'city-drop-down-wrapper',
+    'city-drop-down-trigger',
+    'city-changer'
 )
-
-
-
-
-let cityDropDownParent = 'city-selection-drop-down';
-let cityDropTrigger = 'city-selected-text';
-let citychangers = 'city-selected-text-inner';
-let cityDropDown = new DropDown(
-    cityDropDownParent,
-    cityDropTrigger,
-    citychangers
-)
-
-let paymentDropDownParent = 'payment-selection-drop-down';
-let paymentDropTrigger = 'payment-selected-text';
-let paymentchangers = 'payment-selected-text-inner';
-let paymentDropDown = new DropDown(
-    paymentDropDownParent,
-    paymentDropTrigger,
-    paymentchangers
+new DropDown(
+    'payment-drop-down-wrapper',
+    'payment-drop-down-trigger',
+    'payment-changer'
 )
