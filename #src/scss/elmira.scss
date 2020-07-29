@@ -366,7 +366,62 @@ header{
  .authorization-content .radio-type input:focus {
     border-color: inherit;
   }
-
+  .office-card{
+    margin-left: 80px;
+    width: 50%;
+}
+.office-photo, .employee-photo{
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    margin-right: 24px;
+    background-color: #C4C4C4;
+}
+.office-card-info{
+    margin: 10px;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 32px;
+    letter-spacing: -0.005em;
+    color: #202020;
+}
+.office-card-info img{
+    margin-right: 10px;
+}
+.text-center{
+    text-align: center;
+}
+.call-back-form-button{
+    background: #FFFFFF;
+    margin: 0 auto 78px;
+    cursor: pointer;
+    padding: 10px 35px;
+}
+.call-back-form .radio-buttons-row {
+margin-bottom: 30px;
+}
+.service-office{
+    padding-top: 50px;
+}
+.our-team-employee{
+    text-align: center;
+    margin: 0 3vw;
+    padding: 0 10px;
+}
+.our-team-employee-name{
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+.employee-photo{
+    margin: 30px auto;
+}
+.our-team-section{
+    background-color: #E2E2E2;
+    padding: 50px 0;
+}
+#map{
+    height: 420px;
+}
 
 @media (max-width: 1200px){
     .display-content .quantity-selection-drop-down{
@@ -410,6 +465,9 @@ header{
         .delivery-block{
             padding-top: 77px !important;
         }
+    }
+    .office-contacts .radio-type span {
+        font-size: 13px;
     }
 }
 
@@ -473,10 +531,61 @@ header{
     .delivery-block{
         margin-bottom: 20px;
     }
+    .office-photo, .employee-photo {
+        width: 100px;
+        height: 100px;
+    }
+    .our-team-employee{
+        padding: 0;
+    }
+    .office-card {
+        margin-left: 40px;
+    }
+    .call-back-form .radio-buttons-row label{
+        margin-right: 27px;
+    }
 }
 
 @media (max-width: 576px){
-
+    .office-cards{
+        flex-flow: column;
+    }
+    .office-card:nth-of-type(1){
+        margin-bottom: 40px;
+    }
+    .office-card{
+        width: 80%;
+        margin: 0 auto;
+    }
+    .office-photo, .employee-photo {
+        width: 180px;
+        height: 180px;
+        margin: auto;
+    }
+    .hide-for-mobile{
+        display: none;
+    }
+    .call-back-form .radio-buttons-row{
+        flex-flow: column;
+        align-items: start !important;
+        margin: 10px 0;
+    }
+    .office-contacts .radio-type span {
+        font-size: 16px;
+    }
+    .call-back-form .radio-buttons-row label {
+        margin-bottom: 20px;
+    }
+    .our-team{
+        flex-flow: column;
+    }
+    .our-team-employee {
+        margin: 40px 0;
+        padding: 0 10vw;
+    }
+    .our-team-employee-name {
+        margin: 20px 0;
+    }
     
 }
 
