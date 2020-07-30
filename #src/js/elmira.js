@@ -52,3 +52,28 @@ ymaps.ready(function () {
 });
 
 
+let authorizationTabs = document.querySelectorAll('.delivery-blocks .col-xl-4');
+let authorizationTabsContent = document.querySelectorAll('.delivery-tab-content');
+
+function tabss (tabs, tabContent){
+    function abc (a) {
+        for(let i = a; i < tabContent.length; i++){
+            if(tabContent[i].classList.contains('show')){
+                tabContent[i].classList.remove('show');
+                tabContent[i].classList.add('hide');
+            }else{
+                tabContent[i].classList.add('hide');
+            }       
+        }
+    }
+    abc(1);
+    
+    for (let u = 0; u < tabs.length; u++){
+        tabs[u].addEventListener('click', () => {
+            abc(0);      
+            tabContent[u].classList.add('show');
+        });
+    }
+}
+
+tabss(authorizationTabs,authorizationTabsContent);

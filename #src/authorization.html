@@ -192,8 +192,8 @@
                     </form>
                 </div>
             </div>
+        <div class="small-title text-center mb-4">ДОСТАВКА</div>
         <div class="delivery-tabs">    
-            <div class="small-title text-center mb-4">ДОСТАВКА</div>
             <div class="row delivery-blocks">
                 <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12">
                     <div class="delivery-block p-5">
@@ -233,7 +233,7 @@
                 </div>
             </div>
             <div class="delivery-content-wrapper">
-                <div class="tab-1">
+                <div class="delivery-tab-content">
                     <div class="row">
                         <div class="col-xl-6 col-lg-6 col-md-12 m-auto">
                             <div class="small-title text-center mb-4 mt-5">ДАННЫЕ ПОКУПАТЕЛЯ</div>
@@ -278,11 +278,25 @@
                         </div>
                     </div>
                 </div>
-                <div class="tab-2">
+                <div class="delivery-tab-content hide">
                     <div class="row">
                         <div class="col-xl-6 col-lg-6 col-md-12 m-auto">
-                            <div class="small-title text-center mb-4 mt-5">ДАННЫЕ ПОКУПАТЕЛЯ</div>
+                            <div class="small-title text-center mb-4 mt-5">АДРЕС ДОСТАВКИ</div>
                             <form action="POST" class="user-data">
+                                <div class="city-drop-down-wrapper">
+                                    <div class="city-drop-down-trigger">
+                                        <div class="changing">Латвия</div>
+                                        <img src="img/common/chevron-down.svg" alt="">
+                                    </div>
+                                    <div class="city-drop-down">
+                                        <ul>
+                                            <li class="city-changer">город</li>
+                                            <li class="city-changer">город</li>
+                                            <li class="city-changer">город</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            <div class="small-title text-center mb-4 mt-5">ДАННЫЕ ПОКУПАТЕЛЯ</div>
                                 <div class="d-flex radio-buttons-row align-items-center justify-content-center">
                                     <label class="radio-type">
                                         <input type="radio" name="identification-type">
@@ -323,7 +337,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="tab-3">
+                <div class="delivery-tab-content hide">
                     <div class="row">
                         <div class="col-xl-6 col-lg-6 col-md-12 m-auto">
                             <div class="small-title text-center mb-4 mt-5">АДРЕС ДОСТАВКИ</div>
