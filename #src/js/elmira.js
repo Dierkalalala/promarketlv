@@ -77,3 +77,13 @@ function tabss (tabs, tabContent){
 }
 
 tabss(authorizationTabs,authorizationTabsContent);
+
+
+flatpickr(".datepicker", {});
+flatpickr(".timepicker", {
+    enableTime: true,
+    noCalendar: true,
+    dateFormat: "H:i",
+    time_24hr: true
+});
+
