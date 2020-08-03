@@ -1,0 +1,30 @@
+@font-face {
+    font-family: 'Corbel';
+    src:url(fonts/corbel.ttf) format('truetype');
+    font-style: normal;
+    font-weight: normal;
+}
+@font-face {
+    font-family: 'Corbel';
+    src:url(fonts/corbelb.ttf) format('truetype');
+    font-style: normal;
+    font-weight: bold;
+}
+@font-face {
+    font-family: 'Corbel';
+    src:url(fonts/corbeli.ttf) format('truetype');
+    font-style: italic;
+    font-weight: normal;
+}
+@font-face {
+    font-family: 'Corbel';
+    src:url(fonts/corbelz.ttf) format('truetype');
+    font-style: normal;
+    font-weight: 600;
+}
+@font-face {
+    font-family: 'Mistral';
+    src:url(fonts/mistral.ttf) format('truetype');
+    font-style: normal;
+    font-weight: 600;
+}

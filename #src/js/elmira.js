@@ -1,16 +1,3 @@
-if (screen.width < 768) {
-    let comSwiperThird = new Swiper('.commodity-3 .swiper-container', {
-        loop: true,
-        spaceBetween: 24,
-        pagination: {
-            el: '.commodity-pagination-1',
-            clickable: true,
-        },
-        slidesPerView: 1,
-    })
-}
-//не работает.
-
 let quantityDropDownParent = 'quantity-selection-drop-down';
 let quantityDropTrigger = 'quantity-selected-text';
 let quantitychangers = 'quantity-selected-text-inner';
@@ -19,8 +6,6 @@ let quantityDropDown = new DropDown(
     quantityDropTrigger,
     quantitychangers
 )
-
-
 
 
 let cityDropDownParent = 'city-selection-drop-down';
@@ -40,3 +25,24 @@ let paymentDropDown = new DropDown(
     paymentDropTrigger,
     paymentchangers
 )
+
+var galleryThumbs = new Swiper('.gallery-thumbs', {
+    spaceBetween: 10,
+    slidesPerView: 4,
+    freeMode: true,
+    watchSlidesVisibility: true,
+    watchSlidesProgress: true,
+  });
+  var galleryTop = new Swiper('.gallery-top', {
+    spaceBetween: 10,
+    pagination: {
+      el: '.swiper-pagination',
+    },
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+    thumbs: {
+      swiper: galleryThumbs
+    }
+  });

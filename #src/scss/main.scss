@@ -293,6 +293,7 @@ textarea {
   background: #FFFFFF;
   box-shadow: 0px 6px 8px rgba(0, 0, 0, 0.13);
   padding: 18px 0;
+  z-index: 3;
 }
 
 .logotype {
@@ -320,7 +321,7 @@ body {
 }
 
 .header_navigation_wrapper li {
-  margin-right: 35px;
+  margin-right: 34px;
   position: relative;
 }
 
@@ -968,7 +969,7 @@ main {
 }
 
 .bread-crumbs {
-  padding-top: 40px;
+  padding-top: 35px;
 }
 
 .bread-crumb-link, .bread-crumb-link-active {
@@ -1185,7 +1186,7 @@ main {
 
 .fixing-banner-background {
   position: absolute;
-  width: 69vw;
+  width: 71vw;
   top: 0;
   left: 0;
   height: 100%;
@@ -1195,9 +1196,9 @@ main {
 
 .fixing-main-banner {
   position: relative;
-  margin-bottom: 30px;
+  margin-bottom: 34px;
   z-index: 1;
-  padding-left: 15px;
+  padding-left: 30px;
 }
 
 .fixing-container {
@@ -1253,7 +1254,6 @@ main {
 }
 
 .fixing-company-card-row {
-  padding-left: 15px;
   padding-top: 30px;
   margin-bottom: 50px;
 }
@@ -1291,11 +1291,6 @@ main {
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
   border-radius: 6px;
 }
-
-.fixing-detail-card-row {
-  padding-left: 15px;
-}
-
 .fixing-detail-img-wrap {
   max-height: 200px;
   min-height: 200px;
@@ -1307,6 +1302,11 @@ main {
   object-fit: cover;
   max-width: 100%;
   max-height: 200px;
+  filter: grayscale(1);
+  transition: 0.3s linear all;
+  &:hover{
+    filter: grayscale(0);
+  }
 }
 
 .card-title {
@@ -1485,7 +1485,7 @@ main {
 }
 
 .brand-product {
-  padding-left: 24px;
+  padding-left: 30px;
 }
 
 .fixing-type-for-device-row .fixing-details-card-tick {
@@ -2714,5 +2714,7 @@ main {
   .default-button{
     margin-left: 12px;
   }
-
+}
+.fixing-links-wrapper{
+  margin-bottom: 80px;
 }

@@ -751,54 +751,57 @@
                                 </div>
                             </div>
                         </div>
-
-                        <!--<form class="reservation-form text-center">
-                            <div class="container">
-                                <div class="row justify-content-center">
-
-                                    <div class="col-lg-12">
-                                        <h3 class="small-title mb-2">
-                                            резервация
-                                        </h3>
-                                        <input type="tel" class="form-control mb-4" id="reservation-form-tel"
-                                               aria-describedby="reservation-form-tel" placeholder="Ваш номер телефона">
-                                        <textarea class="form-control" id="reservation-form-comments" rows="5"
-                                                  placeholder="Комментарий"></textarea>
-                                        <h3 class="small-title my-4">
-                                            Филиал
-                                        </h3>
+                        <div class="reservation-form-wrapper">
+                            <form class="reservation-form text-center">
+                                <div class="container">
+                                    <div class="row justify-content-center">
+                                        <div class="col-lg-12">
+                                            <h3 class="small-title mb-2">
+                                                резервация
+                                            </h3>
+                                            <input type="tel" class="form-control mb-4" id="reservation-form-tel"
+                                                   aria-describedby="reservation-form-tel"
+                                                   placeholder="Ваш номер телефона">
+                                            <textarea class="form-control" id="reservation-form-comments" rows="5"
+                                                      placeholder="Комментарий"></textarea>
+                                            <h3 class="small-title my-4">
+                                                Филиал
+                                            </h3>
+                                        </div>
+                                        <div class="d-flex custom-class-123 align-items-center justify-content-between">
+                                            <div class="default-order-radio-wrapper">
+                                                <input type="radio" aria-label="office1" name="office-location"
+                                                       id="office1"
+                                                       class="mx-2">
+                                                <label for="office1">
+                                                    Рига - Центр
+                                                    Ģertrūdes 77, Rīga
+                                                </label>
+                                            </div>
+                                            <div class="default-order-radio-wrapper">
+                                                <input type="radio" aria-label="office2" name="office-location"
+                                                       id="office2"
+                                                       class="mx-2">
+                                                <label for="office2">
+                                                    Рига - Золитуде
+                                                    IXO Centrs,
+                                                    Anniņmuižas iela 17
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-5 offset-md-1 col-md-5 col-sm-6 mt-5">
+                                            <input type="date" placeholder="Введите дату">
+                                        </div>
+                                        <div class="col-lg-5 col-md-5 col-sm-6 mt-5">
+                                            <input type="time" placeholder="Введите время">
+                                        </div>
+                                        <a href="#" class="default-button mt-5">
+                                            подтвердить
+                                        </a>
                                     </div>
-                                    <div class="col-6 default-order-radio-wrapper text-right">
-                                        <input type="radio" aria-label="office1" name="office-location" id="office1"
-                                               class="mx-2">
-                                        <label for="office1">
-                                            Рига - Центр
-                                            Ģertrūdes 77, Rīga
-                                        </label>
-                                    </div>
-                                    <div class="col-6 default-order-radio-wrapper">
-                                        <input type="radio" aria-label="office2" name="office-location" id="office2"
-                                               class="mx-2">
-                                        <label for="office2">
-                                            Рига - Золитуде
-                                            IXO Centrs,
-                                            Anniņmuižas iela 17
-                                        </label>
-                                    </div>
-                                    <div class="col-lg-1 col-md-1"></div>
-                                    <div class="col-lg-5 col-md-5 col-sm-6 mt-5">
-                                        <input type="date" placeholder="Введите дату">
-                                    </div>
-                                    <div class="col-lg-5 col-md-5 col-sm-6 mt-5">
-                                        <input type="time" placeholder="Введите время">
-                                    </div>
-                                    <div class="col-lg-1 col-md-1"></div>
-                                    <a href="#" class="default-button mt-5">
-                                        подтвердить
-                                    </a>
                                 </div>
-                            </div>
-                        </form>-->
+                            </form>
+                        </div>
 
                         <section class="additional-commodities-wrapper service-inner-commodity commodity mt-5">
                             <div class="container">
@@ -837,14 +840,17 @@
                                                             <div class="quantity-view-wrapper align-items-center d-flex">
                                                                 <div class="quantity-input-wrapper">
                                                                     <label>
-                                                                        <input value="1" type="text" class="quantity-input">
+                                                                        <input value="1" type="text"
+                                                                               class="quantity-input">
                                                                     </label>
                                                                 </div>
                                                                 <div class="quantity-trigger-wrapper">
-                                                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                                                    <svg width="24" height="24" viewBox="0 0 24 24"
+                                                                         fill="none"
                                                                          xmlns="http://www.w3.org/2000/svg">
                                                                         <g opacity="0.54">
-                                                                            <path d="M7 10L12 15L17 10H7Z" fill="#202020"/>
+                                                                            <path d="M7 10L12 15L17 10H7Z"
+                                                                                  fill="#202020"/>
                                                                         </g>
                                                                     </svg>
                                                                 </div>
@@ -889,14 +895,17 @@
                                                             <div class="quantity-view-wrapper align-items-center d-flex">
                                                                 <div class="quantity-input-wrapper">
                                                                     <label>
-                                                                        <input value="1" type="text" class="quantity-input">
+                                                                        <input value="1" type="text"
+                                                                               class="quantity-input">
                                                                     </label>
                                                                 </div>
                                                                 <div class="quantity-trigger-wrapper">
-                                                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                                                    <svg width="24" height="24" viewBox="0 0 24 24"
+                                                                         fill="none"
                                                                          xmlns="http://www.w3.org/2000/svg">
                                                                         <g opacity="0.54">
-                                                                            <path d="M7 10L12 15L17 10H7Z" fill="#202020"/>
+                                                                            <path d="M7 10L12 15L17 10H7Z"
+                                                                                  fill="#202020"/>
                                                                         </g>
                                                                     </svg>
                                                                 </div>
@@ -941,14 +950,17 @@
                                                             <div class="quantity-view-wrapper align-items-center d-flex">
                                                                 <div class="quantity-input-wrapper">
                                                                     <label>
-                                                                        <input value="1" type="text" class="quantity-input">
+                                                                        <input value="1" type="text"
+                                                                               class="quantity-input">
                                                                     </label>
                                                                 </div>
                                                                 <div class="quantity-trigger-wrapper">
-                                                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                                                    <svg width="24" height="24" viewBox="0 0 24 24"
+                                                                         fill="none"
                                                                          xmlns="http://www.w3.org/2000/svg">
                                                                         <g opacity="0.54">
-                                                                            <path d="M7 10L12 15L17 10H7Z" fill="#202020"/>
+                                                                            <path d="M7 10L12 15L17 10H7Z"
+                                                                                  fill="#202020"/>
                                                                         </g>
                                                                     </svg>
                                                                 </div>

@@ -1,6 +1,6 @@
 @media (max-width: 1200px) {
   .header_navigation_wrapper li {
-    margin-right: 15px;
+    margin-right: 14px;
   }
   .commodity .swiper-container{
     width: auto;
@@ -9,7 +9,9 @@
   .logotype {
     margin-right: 15px;
   }
-
+  .language-selected-text{
+    margin-right: 17px;
+  }
   .header_form_search {
     margin-right: 15px;
   }
@@ -27,6 +29,9 @@
   .commodity-default-card-list .commodity-card-title{
     max-width: 220px;
     margin-right: 40px;
+  }
+  .fixing-banner-background{
+    width: 72vw;
   }
 }
 
@@ -353,7 +358,7 @@
     top: 0;
     left: -45px;
     height: 100%;
-    z-index: 0;
+    z-index: -1;
     object-fit: cover;
   }
 
@@ -363,8 +368,11 @@
 
   .fixing-company-card-row, .fixing-detail-card-row, .fixing-inner-child-content {
     padding-left: 0;
+    padding-top: 10px;
   }
-
+  .fixing-detail-card{
+    margin-bottom: 15px;
+  }
   .brand-fixing-container {
     padding-left: 0px;
   }
@@ -728,12 +736,49 @@
   .commodity-list-characters .commodity-card-parameter{
     margin-bottom: 5px;
   }
-
+  .fixing-main-page-banner h1{
+    max-width: 550px;
+    margin: 0 auto;
+  }
+  .fixing-main-banner{
+    margin-bottom: 42px;
+  }
+  .fixing-text-content p{
+    max-width: 500px;
+    margin: 0 auto;
+  }
+  .fixing-text-content .fixing-links-wrapper{
+    margin-bottom: 70px;
+  }
+  .fixing-links-wrapper a:first-child{
+    text-decoration: underline;
+  }
+  .footer-first-column-wrapper{
+    border-bottom: 0;
+  }
+  .fixing-main-banner{
+    padding-left: 0;
+  }
 }
 
 @media (max-width: 767px) {
+  .fixing-detail-img-wrap img{
+    filter: grayscale(0);
+  }
+  .brand-search input{
+    margin-bottom: 30px;
+  }
+  .brand-search input{
+    padding-left: 50px;
+  }
   .sorting-pagination{
     display: none;
+  }
+  .fixing-main-banner {
+    margin-bottom: 30px;
+  }
+  .fixing-container .main-banner-row{
+    margin-bottom: 45px;
   }
   .sorting-pages .sorting{
     margin-right: 0;
@@ -841,7 +886,7 @@
     padding-left: 24px;
   }
   .fixing-main-banner .bread-crumbs{
-    margin-bottom: 30px;
+    margin-bottom: 20px;
   }
   .fixing-main-page-banner{
     height: auto;
@@ -1021,14 +1066,18 @@
   }
   .fixing-main-banner-inner h1{
     display: block;
+    max-width: 290px;
   }
   .fixing-main-banner:after {
     display: none;
   }
-
+  .fixing-main-banner .bread-crumbs{
+    padding-top: 19px;
+  }
   .fixing-container .main-banner-row {
     justify-content: flex-start;
   }
+
 
   .fixing-container .main-banner-col {
     max-width: 50%;
@@ -1247,8 +1296,15 @@
   .commodity-default-card-list .commodity-list-characters{
     margin-top: 15px;
   }
-
-
+  .fixing-main-page-banner{
+    padding-left: 0;
+  }
+  .fixing-links-wrapper {
+    margin-bottom: 70px;
+  }
+  .copyright p{
+    width: 100%;
+  }
 }
 
 @media (max-width: 360px) {

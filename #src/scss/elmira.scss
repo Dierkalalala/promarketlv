@@ -34,10 +34,19 @@ header{
         }
     } 
 }
+.display-content .gallery-thumbs .swiper-slide{
+    margin: 20px 20px 0 0;
+    height: 96px;
+    width: 25%;
+    background-size: contain;
+}
+.display-content .gallery-top .swiper-pagination{
+    display: none;
+}
 .commodity-card-price-ex-vat{
-    font-size: 18px;
-    line-height: 24px;
-    color: #202020;
+    font-size: 18px !important;
+    line-height: 24px !important;
+    color: #202020 !important;
     opacity: 0.54;
 }
 .buy-with-installation{
@@ -168,13 +177,14 @@ header{
       background-color: #fff;
       background-image: url('../img/cart/Google__G__Logo\ 1.svg')
   }
-  .authorization-content input, select, textarea{
+  .authorization-content input[type="text"], .authorization-content input[type="tel"], .authorization-content input[type="email"], select, textarea{
     width: 100%;
-    border-radius: 4px;
-    padding: 15px 30px;
-    border: 1px solid rgba(32, 32, 32, .54);
-    color: rgba(32, 32, 32, .54);
   }
+  textarea {
+    resize: none;
+    height: 112px;
+    padding-top: 10px;
+    }
   .buy-with-registration, .buy-without-registration{
       background-color: #fff;
       box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.4);
@@ -224,9 +234,6 @@ header{
     background-color: #EFEFEF;
 }
 .user-data{
-    input, select, textarea{
-        background-color: transparent;
-    }
     .default-button{
         width: fit-content;
         padding: 10px 55px;
@@ -235,16 +242,6 @@ header{
 }
 .show-for-mobile{
     display: none;
-}
-input[type="radio"]{
-    width: fit-content;
-    margin-right: 15px;
-}
-.radio-btns{
-    text-align: center;
-    label{
-        margin-right: 30px;
-    }
 }
 .city-selected-text {
     cursor: pointer;
@@ -399,6 +396,9 @@ input[type="radio"]{
     .commodity-card-price {
         font-size: 22px;
     }
+    .display-content .gallery-thumbs .swiper-slide {
+        height: 79px;
+    }
 }
 
 @media (max-width: 992px){
@@ -432,6 +432,12 @@ input[type="radio"]{
         .delivery-block{
             padding-top: 77px !important;
         }
+    }
+    .display-content .gallery-thumbs .swiper-slide {
+        height: 54px;
+    }
+    .buy-with-installation{
+        margin-top: 1.5rem;
     }
 }
 
@@ -495,11 +501,12 @@ input[type="radio"]{
     .delivery-block{
         margin-bottom: 20px;
     }
-}
-
-@media (max-width: 576px){
-
-    
+    .display-content .gallery-thumbs .swiper-wrapper .swiper-slide{
+        display: none;
+    }
+    .display-content .gallery-top .swiper-pagination{
+        display: block;
+    }
 }
 
 @media (max-width: 508px){
