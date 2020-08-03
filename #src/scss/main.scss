@@ -1858,8 +1858,28 @@ main {
   border-radius: 6px;
   padding: 58px 102px 78px 102px;
 }
-
-#reservation-form-tel, #reservation-form-comments, input[type="date"], input[type="time"] {
+.reservation-form input[name="reservation-form-tel"]{
+  margin-bottom: 1.5rem;
+}
+.reservation-form .radio-buttons-row .radio-type input{
+  width: 30px;
+  margin-right: 20px;
+}
+.reservation-form .radio-buttons-row .radio-type input:checked ~ span:after{
+  left: 5px;
+  top: 19px;
+}
+.reservation-form .radio-buttons-row .radio-type span{
+  text-align: left;
+}
+.reservation-form .radio-buttons-row{
+  padding-left: 5vw;
+}
+input[name="reservation-form-tel"]:focus, textarea[name="reservation-form-comments"]:focus, input[type="date"]:focus, input[type="time"]:focus {
+  border-color: rgba(204, 40, 48, 0.6);
+  outline: none;
+}
+input[name="reservation-form-tel"], textarea[name="reservation-form-comments"], input[type="date"], input[type="time"] {
   width: 100%;
   background: #FAFAFA;
   border: 2px solid #E2E2E2;
